@@ -22,22 +22,26 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             SizedBox(height: 50,),
             ListTile(
-                title: Center(
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage('https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
-                  ),
+              title: Center(
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage('https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
                 ),
+              ),
             ),
             ListTile(
-                title: Center(
-                  child: Text('Fulano de Tal'),
-                ),
+              title: Center(
+                child: Text('Fulano de Tal'),
+              ),
               onTap: (){
-                  Navigator.pop(context);
+                Navigator.pop(context);
               },
             ),
             SizedBox(height: 100,),
             ListTile(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(5),
+              ),
               title: Center(
                 child: Text('Home'),
               ),
@@ -46,6 +50,10 @@ class _HomeState extends State<Home> {
               },
             ),
             ListTile(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(5),
+              ),
               title: Center(
                 child: Text('Material'),
               ),
@@ -54,6 +62,10 @@ class _HomeState extends State<Home> {
               },
             ),
             ListTile(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(5),
+              ),
               title: Center(
                 child:Text('Profile'),
               ),
@@ -71,6 +83,7 @@ class _HomeState extends State<Home> {
 
   buildBody() {
     return Container(
+
       child: ListView(
         children: [
           Column(
@@ -86,22 +99,18 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 100,),
               ListTile(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                leading: Icon(Icons.book),
                 title: Row(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Colors.black),
-                          left: BorderSide(width: 1.0, color: Colors.black),
-                          right: BorderSide(width: 1.0, color: Colors.black),
-                          bottom: BorderSide(width: 1.0, color: Colors.black),
-                        ),
-                      ),
                       child: Padding(
                         padding: EdgeInsets.only(top: 3, bottom: 3,),
                         child: Row(
                           children: [
-                            Icon(Icons.book),
                             SizedBox(width: 10,),
                             Text('Linguagens', style: TextStyle(
                               fontSize: 20,
@@ -115,22 +124,18 @@ class _HomeState extends State<Home> {
                 ),
               ),
               ListTile(
+                leading: Icon(Icons.book),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(5),
+                ),
                 title: Row(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Colors.black),
-                          left: BorderSide(width: 1.0, color: Colors.black),
-                          right: BorderSide(width: 1.0, color: Colors.black),
-                          bottom: BorderSide(width: 1.0, color: Colors.black),
-                        ),
-                      ),
                       child: Padding(
                         padding: EdgeInsets.only(top: 3, bottom: 3,),
                         child: Row(
                           children: [
-                            Icon(Icons.book),
                             SizedBox(width: 10,),
                             Text('Humanas', style: TextStyle(
                               fontSize: 20,
@@ -144,22 +149,18 @@ class _HomeState extends State<Home> {
                 ),
               ),
               ListTile(
+                leading: Icon(Icons.book),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(5),
+                ),
                 title: Row(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Colors.black),
-                          left: BorderSide(width: 1.0, color: Colors.black),
-                          right: BorderSide(width: 1.0, color: Colors.black),
-                          bottom: BorderSide(width: 1.0, color: Colors.black),
-                        ),
-                      ),
                       child: Padding(
                         padding: EdgeInsets.only(top: 3, bottom: 3,),
                         child: Row(
                           children: [
-                            Icon(Icons.book),
                             SizedBox(width: 10,),
                             Text('Exatas', style: TextStyle(
                               fontSize: 20,
@@ -173,22 +174,18 @@ class _HomeState extends State<Home> {
                 ),
               ),
               ListTile(
+                leading: Icon(Icons.book),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(5),
+                ),
                 title: Row(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Colors.black),
-                          left: BorderSide(width: 1.0, color: Colors.black),
-                          right: BorderSide(width: 1.0, color: Colors.black),
-                          bottom: BorderSide(width: 1.0, color: Colors.black),
-                        ),
-                      ),
                       child: Padding(
                         padding: EdgeInsets.only(top: 3, bottom: 3,),
                         child: Row(
                           children: [
-                            Icon(Icons.book),
                             SizedBox(width: 10,),
                             Text('Ciẽncias da Natureza', style: TextStyle(
                               fontSize: 20,
