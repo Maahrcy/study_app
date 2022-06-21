@@ -1,16 +1,13 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Discipline extends StatefulWidget {
+  const Discipline({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Discipline> createState() => _DisciplineState();
 }
 
-class _HomeState extends State<Home> {
+class _DisciplineState extends State<Discipline> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
