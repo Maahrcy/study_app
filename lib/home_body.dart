@@ -15,6 +15,10 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Study App'),
+        backgroundColor: Color(0xFF8CC0DE),
+      ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
