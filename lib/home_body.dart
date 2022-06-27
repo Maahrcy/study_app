@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:versao1/discipline.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _HomeBodyState extends State<HomeBody> {
             ListTile(
               title: Center(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage('https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
+                  backgroundImage: NetworkImage(''),
                 ),
               ),
             ),
@@ -113,6 +114,7 @@ class _HomeBodyState extends State<HomeBody> {
                         child: Row(
                           children: [
                             SizedBox(width: 10,),
+                            ElevatedButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: builder))}, child: child),
                             Text('Linguagens', style: TextStyle(
                               fontSize: 20,
                             ),),
