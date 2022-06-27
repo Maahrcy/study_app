@@ -1,7 +1,6 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:versao1/discipline.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -100,6 +99,7 @@ class _HomeBodyState extends State<HomeBody> {
               ),
               SizedBox(height: 100,),
               ListTile(
+                tileColor: Color(0xFFFFD9C0),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5),
@@ -116,7 +116,6 @@ class _HomeBodyState extends State<HomeBody> {
                             Text('Linguagens', style: TextStyle(
                               fontSize: 20,
                             ),),
-                            SizedBox(width: 140,),
                           ],
                         ),
                       ),
@@ -125,6 +124,7 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
               ),
               ListTile(
+                tileColor: Color(0xFFFFD9C0),
                 leading: Icon(Icons.book),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 1),
@@ -141,7 +141,6 @@ class _HomeBodyState extends State<HomeBody> {
                             Text('Humanas', style: TextStyle(
                               fontSize: 20,
                             ),),
-                            SizedBox(width: 155,),
                           ],
                         ),
                       ),
@@ -150,6 +149,7 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
               ),
               ListTile(
+                tileColor: Color(0xFFFFD9C0),
                 leading: Icon(Icons.book),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 1),
@@ -166,7 +166,6 @@ class _HomeBodyState extends State<HomeBody> {
                             Text('Exatas', style: TextStyle(
                               fontSize: 20,
                             ),),
-                            SizedBox(width: 180,),
                           ],
                         ),
                       ),
@@ -175,6 +174,7 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
               ),
               ListTile(
+                tileColor: Color(0xFFFFD9C0),
                 leading: Icon(Icons.book),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 1),
@@ -191,7 +191,6 @@ class _HomeBodyState extends State<HomeBody> {
                             Text('Ciẽncias da Natureza', style: TextStyle(
                               fontSize: 20,
                             ),),
-                            SizedBox(width: 50,),
                           ],
                         ),
                       ),
