@@ -1,8 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:versao1/discipline.dart';
-import 'package:versao1/home_body.dart';
+import 'package:study_app/discipline.dart';
+import 'package:study_app/home_body.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
