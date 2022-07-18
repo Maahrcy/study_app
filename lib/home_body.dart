@@ -1,7 +1,8 @@
 import 'dart:html';
+import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:versao1/discipline.dart';
+import 'package:study_app/discipline.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -11,7 +12,6 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,9 @@ class _HomeBodyState extends State<HomeBody> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             ListTile(
               title: Center(
                 child: CircleAvatar(
@@ -34,11 +36,13 @@ class _HomeBodyState extends State<HomeBody> {
               title: Center(
                 child: Text('Fulano de Tal'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
-            SizedBox(height: 100,),
+            SizedBox(
+              height: 100,
+            ),
             ListTile(
               shape: RoundedRectangleBorder(
                 side: BorderSide(color: Colors.black, width: 1),
@@ -47,7 +51,7 @@ class _HomeBodyState extends State<HomeBody> {
               title: Center(
                 child: Text('Home'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
@@ -59,7 +63,7 @@ class _HomeBodyState extends State<HomeBody> {
               title: Center(
                 child: Text('Material'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
@@ -69,55 +73,108 @@ class _HomeBodyState extends State<HomeBody> {
                 borderRadius: BorderRadius.circular(5),
               ),
               title: Center(
-                child:Text('Profile'),
+                child: Text('Profile'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
           ],
         ),
       ),
-      body: buildBody(),
+      body: buildBody(context),
     );
   }
 
-  buildBody() {
+  buildBody(context) {
     return Container(
-
       child: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 20),
-                child: Text('Bem-vindo, estudante', style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),),
+                child: Text(
+                  'Bem-vindo, estudante',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              SizedBox(height: 100,),
+              SizedBox(
+                height: 100,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Discipline();
+                  }));
+                },
+                child: ListTile(
+                  tileColor: Color(0xFFFFD9C0),
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.black, width: 1),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  leading: Icon(Icons.book),
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: 3,
+                            bottom: 3,
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Linguagens',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               ListTile(
                 tileColor: Color(0xFFFFD9C0),
+                leading: Icon(Icons.book),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                leading: Icon(Icons.book),
                 title: Row(
                   children: [
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.only(top: 3, bottom: 3,),
+                        padding: EdgeInsets.only(
+                          top: 3,
+                          bottom: 3,
+                        ),
                         child: Row(
                           children: [
-                            SizedBox(width: 10,),
-                            ElevatedButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: builder))}, child: child),
-                            Text('Linguagens', style: TextStyle(
-                              fontSize: 20,
-                            ),),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Humanas',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -136,13 +193,21 @@ class _HomeBodyState extends State<HomeBody> {
                   children: [
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.only(top: 3, bottom: 3,),
+                        padding: EdgeInsets.only(
+                          top: 3,
+                          bottom: 3,
+                        ),
                         child: Row(
                           children: [
-                            SizedBox(width: 10,),
-                            Text('Humanas', style: TextStyle(
-                              fontSize: 20,
-                            ),),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Exatas',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -161,38 +226,21 @@ class _HomeBodyState extends State<HomeBody> {
                   children: [
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.only(top: 3, bottom: 3,),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 10,),
-                            Text('Exatas', style: TextStyle(
-                              fontSize: 20,
-                            ),),
-                          ],
+                        padding: EdgeInsets.only(
+                          top: 3,
+                          bottom: 3,
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ListTile(
-                tileColor: Color(0xFFFFD9C0),
-                leading: Icon(Icons.book),
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.black, width: 1),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                title: Row(
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 3, bottom: 3,),
                         child: Row(
                           children: [
-                            SizedBox(width: 10,),
-                            Text('Ciẽncias da Natureza', style: TextStyle(
-                              fontSize: 20,
-                            ),),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Ciẽncias da Natureza',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -206,5 +254,4 @@ class _HomeBodyState extends State<HomeBody> {
       ),
     );
   }
-
 }
