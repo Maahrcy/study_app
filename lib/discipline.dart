@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:study_app/resume.dart';
 
 class Discipline extends StatefulWidget {
   const Discipline({Key? key}) : super(key: key);
@@ -25,7 +26,6 @@ class _DisciplineState extends State<Discipline> {
             ),*/
             Row(
               children: const [
-                Icon(Icons.menu_book),
                 Text('Natureza'),
               ],
 
@@ -83,33 +83,38 @@ class _DisciplineState extends State<Discipline> {
                     ],
                   ),
                 ),
-                ListTile(
-                  leading: const Icon(Icons.menu_book),
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.black, width: 1),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  title: Row(
-                    children: [
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 3, bottom: 3,),
-                          child: Row(
-                            children: const [
-                              SizedBox(width: 13,),
-                              Text('Química', style: TextStyle(
-                                fontSize: 20,
-                              ),),
-                              SizedBox(width: 155,),
-                            ],
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Resume();
+                    }));
+                  },
+                  child: ListTile(
+                    leading: const Icon(Icons.menu_book),
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: Colors.black, width: 1),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    title: Row(
+                      children: [
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 3, bottom: 3,),
+                            child: Row(
+                              children: const [
+                                SizedBox(width: 13,),
+                                Text('Química', style: TextStyle(
+                                  fontSize: 20,
+                                ),),
+                                SizedBox(width: 155,),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-
-
                 ListTile(
                   leading: const Icon(Icons.menu_book),
                   shape: RoundedRectangleBorder(
