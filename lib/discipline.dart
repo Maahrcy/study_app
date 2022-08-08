@@ -15,30 +15,22 @@ class _DisciplineState extends State<Discipline> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFAF0D7),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            /*TextButton(onPressed: (){},
-                child: const Icon(Icons.arrow_back,
-                    color: Colors.white
-                )
-            ),*/
             Row(
               children: const [
                 Text('Natureza'),
               ],
-
             ),
             const Icon(Icons.search)
           ],
         ),
         backgroundColor: const Color(0xFF8CC0DE),
-
       ),
-
       body: buildBody(
-
       ),
     );
   }
@@ -61,9 +53,10 @@ class _DisciplineState extends State<Discipline> {
                 ListTile(
                   leading: const Icon(Icons.menu_book),
                   shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.black, width: 1),
+                    side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
                     borderRadius: BorderRadius.circular(8),
                   ),
+                  tileColor: Color(0xFFFFD9C0),
                   title: Row(
                     children: [
                       Container(
@@ -73,7 +66,9 @@ class _DisciplineState extends State<Discipline> {
                             children: const [
                               SizedBox(width: 13,),
                               Text('Física', style: TextStyle(
-                                fontSize: 20,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
                               ),),
                               SizedBox(width: 140,),
                             ],
@@ -83,6 +78,7 @@ class _DisciplineState extends State<Discipline> {
                     ],
                   ),
                 ),
+                SizedBox(height: 13),
                 InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -92,9 +88,10 @@ class _DisciplineState extends State<Discipline> {
                   child: ListTile(
                     leading: const Icon(Icons.menu_book),
                     shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: Colors.black, width: 1),
+                      side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
                       borderRadius: BorderRadius.circular(5),
                     ),
+                    tileColor: Color(0xFFFFD9C0),
                     title: Row(
                       children: [
                         Container(
@@ -104,9 +101,10 @@ class _DisciplineState extends State<Discipline> {
                               children: const [
                                 SizedBox(width: 13,),
                                 Text('Química', style: TextStyle(
-                                  fontSize: 20,
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold
                                 ),),
-                                SizedBox(width: 155,),
                               ],
                             ),
                           ),
@@ -115,12 +113,14 @@ class _DisciplineState extends State<Discipline> {
                     ),
                   ),
                 ),
+                SizedBox(height: 13),
                 ListTile(
                   leading: const Icon(Icons.menu_book),
                   shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.black, width: 1),
+                    side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
                     borderRadius: BorderRadius.circular(5),
                   ),
+                  tileColor:   Color(0xFFFFD9C0),
                   title: Row(
                     children: [
                       Container(
@@ -130,7 +130,9 @@ class _DisciplineState extends State<Discipline> {
                             children: const [
                               SizedBox(width: 13,),
                               Text('Biologia', style: TextStyle(
-                                fontSize: 20,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold
                               ),),
                               SizedBox(width: 50,),
                             ],
