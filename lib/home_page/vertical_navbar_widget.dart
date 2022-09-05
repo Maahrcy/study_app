@@ -71,6 +71,21 @@ class _VerticalNavBarState extends State<VerticalNavBar> {
                   Navigator.pop(context);
                 },
               ),
+              ListTile(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                title: Center(
+                  child:Text('Configurações'),
+                ),
+                onTap: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context){
+                      return ConfigPage();
+                    },),);
+                },
+              ),
             ],
           ),
     );
