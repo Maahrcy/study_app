@@ -1,16 +1,16 @@
-# study_app
+# Aplicativo de estudo
+Repositório para o projeto de Programação Mobile.
 
-A new Flutter project.
+## Equipe
+- [Erivando Silva da Hora](https://github.com/beatrizferreira18)
+- [Lucas Rosendo de Farias](https://github.com/LucaRosendo)
+- [Macielly da Trindade Almeida](https://github.com/Maahrcy)
+- [Maria Beatriz Ferreira dos Santos](https://github.com/beatrizferreira18)
+- [Maria Roberta de Lima Santos](https://github.com/robertalimax)
 
-## Getting Started
+## Objetivo
+Construir um aplicativo mobile focado em estudo.
 
-This project is a starting point for a Flutter application.
+## Protótipo do aplicativo
+<img src='https://github.com/Maahrcy/study_app/blob/master/img/prototype.png'>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
