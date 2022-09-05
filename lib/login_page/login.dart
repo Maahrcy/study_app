@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:study_app/home.dart';
+import 'package:study_app/home_page/home.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
