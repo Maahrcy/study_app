@@ -1,8 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:study_app/discipline.dart';
-import 'package:study_app/home_body.dart';
+import 'package:study_app/discipline_page/discipline.dart';
+import 'package:study_app/home_page/home_body.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
