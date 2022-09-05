@@ -2,8 +2,8 @@ import 'dart:html';
 import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:study_app/discipline.dart';
-import 'package:study_app/vertical_navbar_widget.dart';
+import 'package:study_app/discipline_page/discipline.dart';
+import 'package:study_app/home_page/vertical_navbar_widget.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
