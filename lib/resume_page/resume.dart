@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:study_app/exercise_widget.dart';
-import 'package:study_app/mindmap_widget.dart';
-import 'package:study_app/resume_widget.dart';
-import 'package:study_app/desc_page.dart';
+import 'package:study_app/resume_page/exercise_widget.dart';
+import 'package:study_app/resume_page/mindmap_widget.dart';
+import 'package:study_app/resume_page/resume_widget.dart';
+import 'package:study_app/resume_page/desc_pag.dart';
 
 class Resume extends StatefulWidget{
   const Resume({Key? key}) : super(key: key);
