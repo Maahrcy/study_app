@@ -33,7 +33,7 @@ class _ConfigPageState extends State<ConfigPage> {
             child: Text('Tema'),
           ),
           */
-          Center(child: Text("Ainda em construção"),)
+          Center(child: Text("Ainda em construção..."),)
         ],
       ),
     );
