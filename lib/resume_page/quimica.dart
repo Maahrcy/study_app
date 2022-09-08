@@ -2,10 +2,10 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/exercise_widget.dart';
-import 'package:study_app/resume_page/mindmap_widget.dart';
-import 'package:study_app/resume_page/resume_widget.dart';
+import 'package:study_app/resume_page/exercise.dart';
+import 'package:study_app/resume_page/mindmap.dart';
 import 'package:study_app/resume_page/desc_pag.dart';
+import 'package:study_app/resume_page/resume_widget.dart';
 
 class Quimica extends StatefulWidget{
   const Quimica({Key? key}) : super(key: key);

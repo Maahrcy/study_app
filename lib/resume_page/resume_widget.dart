@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/quimica.dart';
-import '';
-import '../home_page/vertical_navbar_widget.dart';
+import 'package:study_app/resume_page/detalhes_grid.dart';
 
 class ResumeWidget extends StatefulWidget {
   const ResumeWidget({Key? key}) : super(key: key);
@@ -12,55 +9,91 @@ class ResumeWidget extends StatefulWidget {
   State<ResumeWidget> createState() => _ResumeWidgetState();
 }
 
-class _ResumeWidgetState extends State<ResumeWidget> {@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Color(0xFFFAF0D7),
-    appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+class _ResumeWidgetState extends State<ResumeWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return DetalhesGrid(
+                //pacoteTuristico: widget.pacoteTuristico,
+              );
+            },
+          ),
+        );
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
           children: [
-            Row(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                ),
-                lusBody('Retornar'),
-              ],
-            ),
-            TextButton(onPressed: (){},
-              child: Icon(Icons.search,
-                  color: Colors.white),
-            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /*FittedBox(
+                    fit: BoxFit.fill,
+                    child: Text(
+                     widget.pacoteTuristico.titulo,
+                      style: const TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),*/
+                  const SizedBox(height: 8),
+                  //Text(widget.pacoteTuristico.transporte),
+                  const SizedBox(height: 8),
+                  Wrap(
+                    children: [
+                      const Icon(Icons.wb_sunny_outlined),
+                      const SizedBox(width: 4),
+                      //Text('${widget.pacoteTuristico.numDiarias} Diárias'),
+                      const SizedBox(width: 8),
+                      Row(
+                        children: [
+                          const Icon(Icons.person_outline),
+                          const SizedBox(width: 4),
+                          //Text('${widget.pacoteTuristico.numPessoas} Pessoa'),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  //Text('A partir de R\$ ${widget.pacoteTuristico.precoAntigo}'),
+                  Wrap(
+                    children: [
+                      /*Text(
+                        'R\$ ${widget.pacoteTuristico.precoAtual}',
+                        style: const TextStyle(
+                          fontSize: 24,
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),*/
+                      const SizedBox(width: 8),
+                      /*Text(
+                        'Taxa Grátis em até ${widget.pacoteTuristico.numParcelas}x',
+                      ),*/
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    'Cancelamento Grátis',
+                    style: TextStyle(
+                        color: Colors.green[700], fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
-        backgroundColor: Color(0xFF8CC0DE)
-    ),
-    body: buildBody(),
-  );
-}
-
-lusBody(String funcao){
-  return Text(funcao,
-    style: const TextStyle(
-      fontSize: 20,
-      color: Colors.white,
-    ),
-  );
-}
-  buildBody() {
-    return ListView(
-      children: [
-        const SizedBox(height: 20,),
-        Text('Resumos',
-          style: GoogleFonts.sriracha(
-            fontSize: 28,
-            color: const Color(0xffd9807c),
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ],
+      ),
     );
   }
 }
