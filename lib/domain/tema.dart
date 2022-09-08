@@ -12,7 +12,7 @@ class Tema {
     required this.textcolor2,
     required this.textcolor3,
 
-}),
+});
   setTema(numtema){
     numtema++;
     Color? textcolor1;
@@ -32,6 +32,6 @@ class Tema {
         setTema(numtema);
         break;
     }
-    return Tema(numtema: numtema, textcolor1: textcolor1, textcolor2: textcolor2, textcolor3: textcolor3)
+    return Tema(numtema: numtema, textcolor1: textcolor1, textcolor2: textcolor2, textcolor3: textcolor3);
   }
 }

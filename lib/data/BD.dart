@@ -6,7 +6,7 @@ import '../domain/tema.dart';
 class BD {
   static List<Resumo> listaResumes = [
     Resumo(
-        titulo: "Olha só",, text: '123456789', color: color),
+        titulo: "Olha só", text: '123456789'),
   ];
 
   final Tema tema = Tema(numtema: 1, textcolor1: Colors.white, textcolor2: Color(0xffd9807c), textcolor3: Colors.black);

@@ -2,7 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:study_app/resume_page/resume.dart';
+import 'package:study_app/resume_page/quimica.dart';
 
 class Discipline extends StatefulWidget {
   const Discipline({Key? key}) : super(key: key);
@@ -82,7 +82,7 @@ class _DisciplineState extends State<Discipline> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return Resume();
+                      return Quimica();
                     }));
                   },
                   child: ListTile(
