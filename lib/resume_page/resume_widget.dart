@@ -15,3 +15,19 @@ class _ResumeWidgetState extends State<ResumeWidget> {
     );
   }
 }
+
+
+/*
+buildListViewBuilder(List<Resumo> listaResumes) {
+  return ListView.builder(
+    physics: const NeverScrollableScrollPhysics(),
+    shrinkWrap: true,
+    itemCount: listaResumes.length,
+    itemBuilder: (context, index) {
+      return ResumeWidget(
+        resumo: listaResumes[index],
+      );
+    },
+  );
+}
+*/
