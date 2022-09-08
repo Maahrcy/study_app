@@ -7,6 +7,6 @@ class Resumo {
   Resumo({
     required this.titulo,
     required this.text,
-    required this.color,// = BD.tema.textcolor,
+    required this.color,// = BD.tema.textcolor3,
   });
 }
