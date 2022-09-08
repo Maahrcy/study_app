@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/resume_page/detalhes_grid.dart';
 
-class ResumeWidget extends StatefulWidget {
-  const ResumeWidget({Key? key}) : super(key: key);
+import '../domain/resumo.dart';
 
+class ResumeWidget extends StatefulWidget {
+  const ResumeWidget({Key? key, required this.resume}) : super(key: key);
+
+  final Resumo resume;
   @override
   State<ResumeWidget> createState() => _ResumeWidgetState();
 }
@@ -19,7 +22,7 @@ class _ResumeWidgetState extends State<ResumeWidget> {
           MaterialPageRoute(
             builder: (context) {
               return DetalhesGrid(
-                //pacoteTuristico: widget.pacoteTuristico,
+                resume: widget.resume,
               );
             },
           ),
@@ -36,16 +39,16 @@ class _ResumeWidgetState extends State<ResumeWidget> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /*FittedBox(
+                  FittedBox(
                     fit: BoxFit.fill,
                     child: Text(
-                     widget.pacoteTuristico.titulo,
+                     widget.resume.titulo,
                       style: const TextStyle(
                         fontSize: 21,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),*/
+                  ),
                   const SizedBox(height: 8),
                   //Text(widget.pacoteTuristico.transporte),
                   const SizedBox(height: 8),

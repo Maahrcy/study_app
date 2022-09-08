@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/resume_page/exercise.dart';
 import 'package:study_app/resume_page/mindmap.dart';
 import 'package:study_app/resume_page/desc_pag.dart';
+import 'package:study_app/resume_page/resume.dart';
 import 'package:study_app/resume_page/resume_widget.dart';
 
 class Quimica extends StatefulWidget{
@@ -81,7 +82,7 @@ class _Quimica extends State<Quimica>{
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return ResumeWidget();
+                  return Resume();
                 },
               ),
             );

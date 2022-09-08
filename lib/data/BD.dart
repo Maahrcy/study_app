@@ -9,6 +9,10 @@ class BD {
         titulo: "Olha só", text: '123456789'),
   ];
 
-  final Tema tema = Tema(numtema: 1, textcolor1: Colors.white, textcolor2: Color(0xffd9807c), textcolor3: Colors.black);
+  static Tema tema = Tema(numtema: 1, textcolor1: Colors.white, textcolor2: Color(0xffd9807c), textcolor3: Colors.black);
+
+  static getTema(){
+    return tema;
+}
 }
 
