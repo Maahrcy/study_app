@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:study_app/home_page/home.dart';
+
+import '../config_page/config.dart';
 
 class VerticalNavBar extends StatefulWidget {
   const VerticalNavBar({Key? key}) : super(key: key);
@@ -44,7 +47,10 @@ class _VerticalNavBarState extends State<VerticalNavBar> {
                   child: Text('Home'),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context){
+                      return Home();
+                    },),);
                 },
               ),
               ListTile(

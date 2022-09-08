@@ -26,13 +26,15 @@ class _ConfigPageState extends State<ConfigPage> {
     return Container(
       child: ListView(
         children: [
-          /*InkWell(
-            onTap: () {
-              BD.setTema(),
-            },
+          InkWell(
+            /*onTap: () {
+              setState(() {
+                BD.setTema(),
+              });
+            },*/
             child: Text('Tema'),
           ),
-          */
+
           Center(child: Text("Ainda em construção..."),)
         ],
       ),
