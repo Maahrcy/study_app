@@ -7,14 +7,14 @@ import 'package:study_app/resume_page/mindmap_widget.dart';
 import 'package:study_app/resume_page/resume_widget.dart';
 import 'package:study_app/resume_page/desc_pag.dart';
 
-class Resume extends StatefulWidget{
-  const Resume({Key? key}) : super(key: key);
+class Quimica extends StatefulWidget{
+  const Quimica({Key? key}) : super(key: key);
 
   @override
-  _Resume createState()=> _Resume();
+  _Quimica createState()=> _Quimica();
 }
 
-class _Resume extends State<Resume>{
+class _Quimica extends State<Quimica>{
   Desc item1 = Desc(
     titlo: 'Resumo',
   );
