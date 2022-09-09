@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class Resumo {
   final String titulo;
-  final List<Text> text;
+  //final List<Text> text;
+  final String text;
   //final Color? color;
   Resumo({
     required this.titulo,
@@ -10,7 +11,7 @@ class Resumo {
     //required this.color,// = BD.tema.textcolor3,
   });
 
-
+/*
   Text MakeBold(String text){
     return Text(text,
     style: TextStyle(
@@ -18,4 +19,14 @@ class Resumo {
     ),);
   }
 
+ */
+/*
+  List<Text> ApllyStyle(List<Text> text, TextStyle? estilo){
+    for(int i =0; i<text.length; i++){
+      text[i].style?.apply(estilo.color, estilo?.backgroundColor, decoration: estilo?.decoration, estilo?.decorationColor, decorationStyle: estilo.decorationStyle, estilo.decorationThickness, );
+    }
+    return text;
+  }
+
+ */
 }

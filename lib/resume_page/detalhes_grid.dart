@@ -53,7 +53,7 @@ class _DetalhesGridState extends State<DetalhesGrid> {
                   height: 20,
                 ),
                 Text(
-                  '${pacote.text}',
+                  pacote.text,
                   style: TextStyle(
                     color: BD.tema.textcolor3,
                     fontSize: 18,
