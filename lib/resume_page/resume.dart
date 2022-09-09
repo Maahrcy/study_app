@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_app/domain/resumo.dart';
+import 'package:study_app/resume_page/resume_widget.dart';
+
+import '../data/BD.dart';
 
 class Resume extends StatefulWidget {
   const Resume({Key? key}) : super(key: key);
@@ -10,6 +14,8 @@ class Resume extends StatefulWidget {
 }
 
 class _ResumeState extends State<Resume> {
+  List<Resumo> listaResumes = BD.listaResumes;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFAF0D7),
@@ -47,7 +53,7 @@ class _ResumeState extends State<Resume> {
   }
 
   buildBody() {
-    return ListView(
+    return Column(
       children: [
         const SizedBox(height: 20,),
         Text('Resumo',
@@ -57,6 +63,19 @@ class _ResumeState extends State<Resume> {
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
+        ),
+        //Aqui embaixo vai ser feito o gribuild
+        GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.36,
+          ),
+          itemCount: listaResumes.length,
+          itemBuilder: (context, index) {
+            return ResumeWidget(
+              resume: listaResumes[index],
+            );
+          },
         ),
       ],
     );
