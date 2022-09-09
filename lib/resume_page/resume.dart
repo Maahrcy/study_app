@@ -28,7 +28,7 @@ class _ResumeState extends State<Resume> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  lusBody('Retornar'),
+                  BD.lusBody('Resumos'),
                 ],
               ),
               TextButton(onPressed: (){},
@@ -39,21 +39,29 @@ class _ResumeState extends State<Resume> {
           ),
           backgroundColor: Color(0xFF8CC0DE)
       ),
-      body: buildBody(),
-    );
-  }
-
-  lusBody(String materia){
-    return Text(materia,
-      style: const TextStyle(
-        fontSize: 20,
-        color: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 1,
+            mainAxisSpacing: 1,
+            childAspectRatio: 1.5,
+          ),
+          itemCount: listaResumes.length,
+          itemBuilder: (context, index) {
+            return ResumeWidget(
+              resume: listaResumes[index],
+            );
+          },
+        ),
       ),
     );
   }
 
+/*
   buildBody() {
-    return Column(
+    return ListView(
       children: [
         const SizedBox(height: 20,),
         Text('Resumo',
@@ -65,19 +73,9 @@ class _ResumeState extends State<Resume> {
           textAlign: TextAlign.center,
         ),
         //Aqui embaixo vai ser feito o gribuild
-        GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.36,
-          ),
-          itemCount: listaResumes.length,
-          itemBuilder: (context, index) {
-            return ResumeWidget(
-              resume: listaResumes[index],
-            );
-          },
-        ),
+
       ],
     );
   }
+ */
 }

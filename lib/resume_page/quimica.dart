@@ -8,6 +8,8 @@ import 'package:study_app/resume_page/desc_pag.dart';
 import 'package:study_app/resume_page/resume.dart';
 import 'package:study_app/resume_page/resume_widget.dart';
 
+import '../data/BD.dart';
+
 class Quimica extends StatefulWidget{
   const Quimica({Key? key}) : super(key: key);
 
@@ -39,7 +41,7 @@ class _Quimica extends State<Quimica>{
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                 ),
-                lusBody('Química'),
+                BD.lusBody('Química'),
               ],
             ),
             TextButton(onPressed: (){},
@@ -51,15 +53,6 @@ class _Quimica extends State<Quimica>{
           backgroundColor: Color(0xFF8CC0DE)
       ),
       body: buildBody(),
-    );
-  }
-
-  lusBody(String materia){
-    return Text(materia,
-      style: const TextStyle(
-        fontSize: 20,
-        color: Colors.white,
-      ),
     );
   }
 
