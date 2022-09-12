@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/home_page/home.dart';
 
-import '../config_page/config.dart';
+import '../config_page/config_page.dart';
 
 class VerticalNavBar extends StatefulWidget {
   const VerticalNavBar({Key? key}) : super(key: key);

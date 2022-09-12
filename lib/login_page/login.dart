@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 28),
             TextFormField(
               validator: (value) {
-                if (value == null || value!.isEmpty) {
+                if (value == null || value.isEmpty) {
                   return 'Campo e-mail obrigatório';
                 }
                 return null;

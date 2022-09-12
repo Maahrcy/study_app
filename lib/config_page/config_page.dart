@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/home_page/vertical_navbar_widget.dart';
 
+import '../data/BD.dart';
+
 class ConfigPage extends StatefulWidget {
   const ConfigPage({Key? key}) : super(key: key);
 
@@ -27,11 +29,19 @@ class _ConfigPageState extends State<ConfigPage> {
       child: ListView(
         children: [
           InkWell(
-            /*onTap: () {
+            onTap: () {
               setState(() {
-                BD.setTema(),
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context){
+                    return AlertDialog(
+                      title: new Text("Mudar o tema"),
+                      content: new Text("Futuramente, quando clicar aqui, irá mudar o tema do app."),
+                    );
+                  },
+                );
               });
-            },*/
+            },
             child: Text('Tema'),
           ),
 
