@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../data/BD.dart';
+
 class ExerciseWidget extends StatefulWidget {
   const ExerciseWidget({Key? key}) : super(key: key);
 
@@ -22,7 +24,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  lusBody('Retornar'),
+                  BD.lusBody('Retornar'),
                 ],
               ),
               TextButton(onPressed: (){},
@@ -34,15 +36,6 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
           backgroundColor: Color(0xFF8CC0DE)
       ),
       body: buildBody(),
-    );
-  }
-
-  lusBody(String materia){
-    return Text(materia,
-      style: const TextStyle(
-        fontSize: 20,
-        color: Colors.white,
-      ),
     );
   }
 

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../data/BD.dart';
+
 class MindMapWidget extends StatefulWidget {
   const MindMapWidget({Key? key}) : super(key: key);
 
@@ -22,7 +24,7 @@ class _MindMapWidgetState extends State<MindMapWidget> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  lusBody('Retornar'),
+                  BD.lusBody('Retornar'),
                 ],
               ),
               TextButton(onPressed: (){},
@@ -36,16 +38,6 @@ class _MindMapWidgetState extends State<MindMapWidget> {
       body: buildBody(),
     );
   }
-
-  lusBody(String materia){
-    return Text(materia,
-      style: const TextStyle(
-        fontSize: 20,
-        color: Colors.white,
-      ),
-    );
-  }
-
   buildBody() {
     return ListView(
       children: [
