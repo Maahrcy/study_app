@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/detalhes_grid.dart';
+import 'package:study_app/resume_page/detalhes_resumo_grid.dart';
 
 import '../data/BD.dart';
 import '../domain/resumo.dart';
@@ -23,7 +23,7 @@ class _ResumeWidgetState extends State<ResumeWidget> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return DetalhesGrid(
+              return DetalhesResumoGrid(
                 resume: widget.resume,
               );
             },

@@ -1,17 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_app/domain/materia.dart';
+import 'package:study_app/resume_page/exercise_widget.dart';
 
 import '../data/BD.dart';
 
-class ExerciseWidget extends StatefulWidget {
-  const ExerciseWidget({Key? key}) : super(key: key);
+class Exercise extends StatefulWidget {
+  const Exercise({Key? key}) : super(key: key);
 
   @override
-  State<ExerciseWidget> createState() => _ExerciseWidgetState();
+  State<Exercise> createState() => _ExerciseState();
 }
 
-class _ExerciseWidgetState extends State<ExerciseWidget> {
+class _ExerciseState extends State<Exercise> {
+  List<Exercicio> ListaExercicio = BD.ListaExercicioQui;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFAF0D7),
@@ -27,7 +31,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                   BD.lusBody('Retornar'),
                 ],
               ),
-              TextButton(onPressed: (){},
+              TextButton(onPressed: () {},
                 child: Icon(Icons.search,
                     color: Colors.white),
               ),
@@ -50,6 +54,21 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
+        ),
+
+        GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 1,
+            mainAxisSpacing: 1,
+            childAspectRatio: 1.5,
+          ),
+          itemCount: ListaExercicio.length,
+          itemBuilder: (context, index) {
+            return ExerciseWidget(
+              exercicio: ListaExercicio[index],
+            );
+          },
         ),
       ],
     );

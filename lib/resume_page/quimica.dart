@@ -6,7 +6,6 @@ import 'package:study_app/resume_page/exercise.dart';
 import 'package:study_app/resume_page/mindmap.dart';
 import 'package:study_app/resume_page/desc_pag.dart';
 import 'package:study_app/resume_page/resume.dart';
-import 'package:study_app/resume_page/resume_widget.dart';
 
 import '../data/BD.dart';
 
@@ -31,7 +30,7 @@ class _Quimica extends State<Quimica>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF0D7),
+      backgroundColor: const Color(0xFFFAF0D7),
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,12 +44,12 @@ class _Quimica extends State<Quimica>{
               ],
             ),
             TextButton(onPressed: (){},
-              child: Icon(Icons.search,
+              child: const Icon(Icons.search,
                   color: Colors.white),
             ),
           ],
         ),
-          backgroundColor: Color(0xFF8CC0DE)
+          backgroundColor: const Color(0xFF8CC0DE)
       ),
       body: buildBody(),
     );
@@ -75,7 +74,7 @@ class _Quimica extends State<Quimica>{
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Resume();
+                  return const Resume();
                 },
               ),
             );
@@ -88,7 +87,7 @@ class _Quimica extends State<Quimica>{
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return ExerciseWidget();
+                  return const Exercise();
                 },
               ),
             );
@@ -101,7 +100,7 @@ class _Quimica extends State<Quimica>{
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return MindMapWidget();
+                  return const MindMapWidget();
                 },
               ),
             );

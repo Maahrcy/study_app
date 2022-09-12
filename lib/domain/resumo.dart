@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Resumo {
   final String titulo;
   //final List<Text> text;

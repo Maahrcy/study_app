@@ -1,57 +1,51 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_app/domain/materia.dart';
+import 'package:study_app/resume_page/detalhes_exercicio_grid.dart';
 
 import '../data/BD.dart';
 
 class ExerciseWidget extends StatefulWidget {
-  const ExerciseWidget({Key? key}) : super(key: key);
+  const ExerciseWidget({Key? key, required this.exercicio}) : super(key: key);
 
+  final Exercicio exercicio;
   @override
   State<ExerciseWidget> createState() => _ExerciseWidgetState();
 }
 
 class _ExerciseWidgetState extends State<ExerciseWidget> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFFAF0D7),
-      appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                  ),
-                  BD.lusBody('Retornar'),
-                ],
-              ),
-              TextButton(onPressed: (){},
-                child: Icon(Icons.search,
-                    color: Colors.white),
-              ),
-            ],
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return DetalhesExercicioGrid(exercicio: widget.exercicio);
+            },
           ),
-          backgroundColor: Color(0xFF8CC0DE)
-      ),
-      body: buildBody(),
-    );
-  }
-
-  buildBody() {
-    return ListView(
-      children: [
-        const SizedBox(height: 20,),
-        Text('Exercícios',
-          style: GoogleFonts.sriracha(
-            fontSize: 28,
-            color: const Color(0xffd9807c),
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
+        );
+      },
+      child: Card(
+        color: const  Color(0xFFFFD9C0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
         ),
-      ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Text(
+              widget.exercicio.titulo,
+              style: GoogleFonts.sriracha(
+                fontSize: 24,
+                color: BD.tema.textcolor1,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

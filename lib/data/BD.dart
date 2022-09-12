@@ -4,8 +4,90 @@ import '../domain/resumo.dart';
 import '../domain/tema.dart';
 
 class BD {
-  //static Resumo resumo = Resumo(titulo: 'quaklquer', text: 'qualquer');
-  static List<Resumo> listaResumes = [
+
+  static List<Materia> listaMaterias = [
+    Materia(titulo: 'Matemática', exercicio: ListaExercicioMat, mindmaps: [], resumo: listaResumesMat,),
+    Materia(titulo: 'Portugûes', exercicio: ListaExercicioPor, mindmaps: [], resumo: listaResumesPor,),
+    Materia(titulo: 'Química', exercicio: ListaExercicioQui, mindmaps: [], resumo: listaResumesMat,),
+    Materia(titulo: 'História', exercicio: ListaExercicioHis, mindmaps: [], resumo: listaResumesHis,),
+    Materia(titulo: 'Geografia', exercicio: ListaExercicioGeo, mindmaps: [], resumo: listaResumesGeo,),
+    Materia(titulo: 'Biologia', exercicio:ListaExercicioBio, mindmaps: [], resumo: listaResumesBio,),
+    Materia(titulo: 'Física', exercicio: ListaExercicioFis, mindmaps: [], resumo: listaResumesFis,),
+  ];
+
+  static List<Exercicio> ListaExercicioMat = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesMat = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
+  static List<Exercicio> ListaExercicioPor = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesPor = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
+  static List<Exercicio> ListaExercicioQui = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesQui = [
     Resumo(
         titulo: 'Isomeria',
         text:
@@ -30,6 +112,127 @@ class BD {
         text: '  Lorem input não sei oq não sei oq não sei oq')
   ];
 
+
+  static List<Exercicio> ListaExercicioHis = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesHis = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
+  static List<Exercicio> ListaExercicioGeo = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesGeo = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
+  static List<Exercicio> ListaExercicioBio = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesBio = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
+  static List<Exercicio> ListaExercicioFis = [
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+    Exercicio(
+        titulo: 'Exercício 1',
+        text: 'text'),
+  ];
+
+  static List<Resumo> listaResumesFis = [
+    Resumo(
+        titulo: 'Resumo 1',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 2',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 3',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 4',
+        text: '  Lorem input não sei oq não sei oq não sei oq'),
+    Resumo(
+        titulo: 'Resumo 5',
+        text: '  Lorem input não sei oq não sei oq não sei oq')
+  ];
+
   static Tema tema = Tema(
       numtema: 1,
       textcolor1: Colors.white,
@@ -39,16 +242,6 @@ class BD {
   static getTema() {
     return tema;
   }
-
-  static List<Materia> listaMaterias = [
-    Materia(titulo: 'Matemática'),
-    Materia(titulo: 'Portugûes'),
-    Materia(titulo: 'Química'),
-    Materia(titulo: 'História'),
-    Materia(titulo: 'Geografia'),
-    Materia(titulo: 'Biologia'),
-    Materia(titulo: 'Física'),
-  ];
 
   static lusBody(String materia) {
     return Text(

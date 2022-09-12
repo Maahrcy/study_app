@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/domain/resumo.dart';
 import 'package:study_app/resume_page/resume_widget.dart';
 
@@ -14,7 +13,7 @@ class Resume extends StatefulWidget {
 }
 
 class _ResumeState extends State<Resume> {
-  List<Resumo> listaResumes = BD.listaResumes;
+  List<Resumo> listaResumes = BD.listaResumesMat;
 
   Widget build(BuildContext context) {
     return Scaffold(
