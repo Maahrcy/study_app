@@ -24,42 +24,92 @@ class _ConfigPageState extends State<ConfigPage> {
 
   buildBody(context) {
     return Container(
-      child: ListView(
-        children: [
-          InkWell(
-            onTap: () {
-              setState(() {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context){
-                    return AlertDialog(
-                      title: new Text("Mudar o tema"),
-                      content: new Text("Futuramente, quando clicar aqui, irá mudar o tema do app."),
+      child: Center(
+        child: ListView(
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: new Text("Mudar o tema"),
+                        content: new Text("Futuramente, quando clicar aqui, irá mudar o tema do app."),
+                      );
+                    },
+                  );
+                });
+              },
+              child: Text('Tema'),
+            ),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: new Text("Contate-nos"),
+                        content: new Text("E-mail : example@gmail.com\nTelefone: (82) 99812 3456"),
+                      );
+                    },
+                  );
+                });
+              },
+              child: Text('Contate-nos'),
+            ),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: new Text("Sobre nós"),
+                        content: new Text("Bem, preciso consultar os outros primeiro"),
+                      );
+                    },
+                  );
+                });
+              },
+              child: Text('Sobre nós'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: (){
+                    showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: new Text("Add"),
+                        content: new Text("Adicionando tamanho na fonte"),
+                        );
+                      },
                     );
-                  },
-                );
-              });
-            },
-            child: Text('Tema'),
-          ),
-          InkWell(
-            onTap: () {
-              setState(() {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context){
-                    return AlertDialog(
-                      title: new Text("Sobre nós"),
-                      content: new Text("Bem, preciso consultar os outros primeiro"),
-                    );
-                  },
-                );
-              });
-            },
-            child: Text('Sobre nós'),
-          ),
-          Center(child: Text("Ainda em construção..."),)
-        ],
+                  }, icon: const Icon(CupertinoIcons.add, color: Colors.black,)),
+                Text("Fonte"),
+                IconButton(
+                    onPressed: (){
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context){
+                          return AlertDialog(
+                            title: new Text("Minus"),
+                            content: new Text("Retirando tamanho na fonte"),
+                          );
+                        },
+                      );
+                    },
+                    icon: const Icon(CupertinoIcons.minus, color: Colors.black,)),
+              ],
+            ),
+
+            Center(child: Text("Ainda em construção..."),)
+          ],
+        ),
       ),
     );
   }
