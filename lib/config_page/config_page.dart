@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/home_page/vertical_navbar_widget.dart';
 
-import '../data/BD.dart';
-
 class ConfigPage extends StatefulWidget {
   const ConfigPage({Key? key}) : super(key: key);
 
@@ -44,7 +42,22 @@ class _ConfigPageState extends State<ConfigPage> {
             },
             child: Text('Tema'),
           ),
-
+          InkWell(
+            onTap: () {
+              setState(() {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context){
+                    return AlertDialog(
+                      title: new Text("Sobre nós"),
+                      content: new Text("Bem, preciso consultar os outros primeiro"),
+                    );
+                  },
+                );
+              });
+            },
+            child: Text('Sobre nós'),
+          ),
           Center(child: Text("Ainda em construção..."),)
         ],
       ),
