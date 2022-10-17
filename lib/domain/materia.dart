@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:study_app/domain/resumo.dart';
 
 class Materia {
-  final String titulo;
-  final List<Exercicio> exercicio;
-  final List<Mindmaps> mindmaps;
-  final List<Resumo> resumo;
+  final String titulo; /*varchar*/
+  final List<Exercicio> exercicio; /*varchar*/
+  final List<Mindmaps> mindmaps; /*varchar*/
+  final List<Resumo> resumo; /*varchar*/
 
   Materia({
     required this.titulo,
@@ -14,6 +14,8 @@ class Materia {
     required this.resumo,
   });
 }
+
+/*CLASSES*/
 
 class Mindmaps {
   final Image image;

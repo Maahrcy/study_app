@@ -233,6 +233,12 @@ class BD {
         text: '  Lorem input não sei oq não sei oq não sei oq')
   ];
 
+  static Future<List<Materia>> getValues() async {
+    await Future.delayed(const Duration(seconds: 10));
+    return listaMaterias;
+  }
+
+  /*
   static Tema tema = Tema(
       numtema: 1,
       textcolor1: Colors.white,
@@ -252,4 +258,6 @@ class BD {
       ),
     );
   }
+  */
+
 }

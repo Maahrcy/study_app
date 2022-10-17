@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Tema {
-  final int numtema;
-  final Color? textcolor1;
-  final Color? textcolor2;
-  final Color? textcolor3;
+  final int numtema; /*int*/
+  final Color? textcolor1; /*varchar*/
+  final Color? textcolor2; /*varchar*/
+  final Color? textcolor3; /*varchar*/
 
+  /*CLASSE*/
   Tema({
     required this.numtema,
     required this.textcolor1,
@@ -13,6 +14,7 @@ class Tema {
     required this.textcolor3,
 
 });
+  /*CONF*/
   setTema(numtema){
     numtema++;
     Color? textcolor1;
