@@ -79,19 +79,6 @@ class _ConfigPageState extends State<ConfigPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  onPressed: (){
-                    showDialog(
-                    context: context,
-                    builder: (BuildContext context){
-                      return AlertDialog(
-                        title: new Text("Add"),
-                        content: new Text("Adicionando tamanho na fonte"),
-                        );
-                      },
-                    );
-                  }, icon: const Icon(CupertinoIcons.add, color: Colors.black,)),
-                Text("Fonte"),
-                IconButton(
                     onPressed: (){
                       showDialog(
                         context: context,
@@ -104,6 +91,19 @@ class _ConfigPageState extends State<ConfigPage> {
                       );
                     },
                     icon: const Icon(CupertinoIcons.minus, color: Colors.black,)),
+                Text("Fonte"),
+                IconButton(
+                  onPressed: (){
+                    showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        title: new Text("Add"),
+                        content: new Text("Adicionando tamanho na fonte"),
+                        );
+                      },
+                    );
+                  }, icon: const Icon(CupertinoIcons.add, color: Colors.black,)),
               ],
             ),
 
