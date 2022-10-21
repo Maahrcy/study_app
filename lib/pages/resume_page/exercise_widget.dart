@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/domain/materia.dart';
-import 'package:study_app/resume_page/detalhes_exercicio_grid.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/pages/resume_page/detalhes_exercicio_grid.dart';
+import 'package:study_app/database/DB.dart';
 
 class ExerciseWidget extends StatefulWidget {
   const ExerciseWidget({Key? key, required this.exercicio}) : super(key: key);
@@ -40,7 +39,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
               widget.exercicio.titulo,
               style: GoogleFonts.sriracha(
                 fontSize: 24,
-                color: BD.tema.textcolor1,
+                color: DB.tema.textcolor1,
               ),
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/domain/materia.dart';
-import '../data/BD.dart';
+import 'package:study_app/database/DB.dart';
 
 class DetalhesExercicioGrid extends StatefulWidget {
   const DetalhesExercicioGrid({Key? key, required this.exercicio}) : super(key: key);
@@ -26,7 +26,7 @@ class _DetalhesExercicioGridState extends State<DetalhesExercicioGrid> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Resumos'),
+                  DB.lusBody('Resumos'),
                 ],
               ),
               TextButton(onPressed: (){},
@@ -44,7 +44,7 @@ class _DetalhesExercicioGridState extends State<DetalhesExercicioGrid> {
                 Center(
                   child: Text(pacote.titulo,
                   style: TextStyle(
-                    color: BD.tema.textcolor2,
+                    color: DB.tema.textcolor2,
                     fontSize: 24,
                   ),),
                 ),
@@ -54,7 +54,7 @@ class _DetalhesExercicioGridState extends State<DetalhesExercicioGrid> {
                 Text(
                   pacote.text,
                   style: TextStyle(
-                    color: BD.tema.textcolor3,
+                    color: DB.tema.textcolor3,
                     fontSize: 18,
                   ),
                 ),

@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:study_app/home_page/vertical_navbar_widget.dart';
-import '../data/BD.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/pages/home_page/vertical_navbar_widget.dart';
+import 'package:study_app/database/DB.dart';
 
 class ConfigPage extends StatefulWidget {
   const ConfigPage({Key? key}) : super(key: key);
@@ -53,7 +51,7 @@ class _ConfigPageState extends State<ConfigPage> {
                   child: Text('Tema',
                     style: TextStyle(
                       fontSize: 20,
-                      color: BD.tema.textcolor1,
+                      color: DB.tema.textcolor1,
                     ),),
                 ),
               ),
@@ -76,7 +74,7 @@ class _ConfigPageState extends State<ConfigPage> {
                   child: Text('Contate-nos',
                     style: TextStyle(
                       fontSize: 20,
-                      color: BD.tema.textcolor1,
+                      color: DB.tema.textcolor1,
                     ),),
                 ),
               ),
@@ -99,7 +97,7 @@ class _ConfigPageState extends State<ConfigPage> {
                   child: Text('Sobre nós',
                     style: TextStyle(
                     fontSize: 20,
-                      color: BD.tema.textcolor1,
+                      color: DB.tema.textcolor1,
                   ),),
                 ),
               ),
@@ -111,7 +109,7 @@ class _ConfigPageState extends State<ConfigPage> {
                   Text("Fonte",
                     style: TextStyle(
                       fontSize: 20,
-                      color: BD.tema.textcolor1,
+                      color: DB.tema.textcolor1,
                     ),),
                   Padding(
                     padding: const EdgeInsets.only(right: 8.0),
@@ -153,7 +151,7 @@ class _ConfigPageState extends State<ConfigPage> {
 
               Center(child: Text("Ainda em construção...",
               style: TextStyle(
-                color: BD.tema.textcolor1,
+                color: DB.tema.textcolor1,
               ),),)
             ],
           ),

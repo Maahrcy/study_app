@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:study_app/home_page/home.dart';
+import 'package:study_app/domain/user.dart';
+import 'package:study_app/database/user_dao.dart';
+import '../home_page/home.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
-
+class RegisterUser extends StatefulWidget {
+  const RegisterUser({Key? key}) : super(key: key);
   @override
-  State<Login> createState() => _LoginState();
+  State<RegisterUser> createState() => _RegisterUserState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterUserState extends State<RegisterUser> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController userController = TextEditingController();
   TextEditingController passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,7 +41,7 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 35),
             Align(
                 alignment: Alignment.topCenter,
-                child: Text("WELCOME!",
+                child: Text("REGISTER USER",
                     textDirection: TextDirection.ltr,
                     style: TextStyle(fontSize: 25))),
             const SizedBox(height: 28),
@@ -47,7 +49,7 @@ class _LoginState extends State<Login> {
             TextFormField(
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Campo e-mail obrigatório';
+                  return 'Campo de e-mail obrigatório';
                 }
                 return null;
               },
@@ -57,6 +59,7 @@ class _LoginState extends State<Login> {
             ),
             const SizedBox(height: 16),
             TextFormField(
+              controller: passController,
               obscureText: true,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -64,55 +67,30 @@ class _LoginState extends State<Login> {
                 } else if (value.length < 6) {
                   return 'Senha deve possuir no mínimo 6 digitos';
                 }
-
                 return null;
               },
               decoration: const InputDecoration(
                   border: OutlineInputBorder(), labelText: 'Password'),
-              controller: passController,
             ),
             const SizedBox(height: 33),
             ElevatedButton(
-              onPressed: () {
+              onPressed: ()  async {
                 if (_formKey.currentState!.validate()) {
                   String userInput = userController.text;
                   String passInput = passController.text;
 
-                  String user = 'fulano@example.com';
-                  String password = '123456';
-
-                  if (user == userInput && password == passInput) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return Home();
-                        },
-                      ),
-                    );
-                  } else {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Text('Usuário/Senha incorreto(s)'),
-                            actions: <Widget>[
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text('OK'))
-                            ],
-                          );
-                        });
-                    print('Usuário/Senha incorreto(s)');
-                  }
+                  User createdUser = User(username: userInput, password: passInput);
+                  await userDao().saveUser(user: createdUser);
+                  SnackBar(content: Text('Usuário registrado'),);
+                  Navigator.pop(context);
+                } else {
+                 SnackBar(content: Text('Algo deu errado'),);
                 }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Log In'),
+                children: const [
+                  Text('Register'),
                 ],
               ),
             ),
@@ -121,4 +99,5 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+  onPressedRegister() {}
 }

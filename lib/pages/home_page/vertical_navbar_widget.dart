@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:study_app/home_page/home.dart';
+import 'package:study_app/pages/home_page/home.dart';
 
 import '../config_page/config_page.dart';
 

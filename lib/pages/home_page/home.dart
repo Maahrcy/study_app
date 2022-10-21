@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:study_app/discipline_page/discipline.dart';
-import 'package:study_app/home_page/home_body.dart';
+import 'package:study_app/pages/discipline_page/discipline.dart';
+import 'package:study_app/pages/home_page/home_body.dart';
+import 'package:study_app/pages/profile_page/profile.dart';
+import 'package:study_app/pages/config_page/config_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,6 +16,8 @@ class _HomeState extends State<Home> {
   List pages = [
     HomeBody(),
     Discipline(),
+    Profile(),
+    ConfigPage(),
   ];
 
   @override
@@ -80,6 +84,9 @@ class _HomeState extends State<Home> {
       ),
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
+        unselectedItemColor: Colors.green,
         selectedItemColor: Color(0xFF8CC0DE),
         currentIndex: selectedIndex,
         onTap: (index) {

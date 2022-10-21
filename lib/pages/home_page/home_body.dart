@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:study_app/discipline_page/discipline.dart';
-import 'package:study_app/home_page/vertical_navbar_widget.dart';
+import 'package:study_app/pages/discipline_page/discipline.dart';
+import 'package:study_app/pages/home_page/vertical_navbar_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_app/database/shared_pref_helper.dart';
+import 'package:study_app/pages/login_page/login.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -22,6 +24,19 @@ class _HomeBodyState extends State<HomeBody> {
             fontWeight: FontWeight.bold
         ),),
         backgroundColor: Color(0xFF8CC0DE),
+        actions: [
+          IconButton(onPressed: () {
+            SharedPrefHelper().logout();
+            Navigator.pushReplacement(
+                context, 
+                MaterialPageRoute(
+                    builder: (context) {
+                      return const Login();
+                    }));
+            
+          }, 
+              icon: const Icon(Icons.logout))
+        ],
 
       ),
       drawer: VerticalNavBar(),

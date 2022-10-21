@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper {
-
   Future<SharedPreferences> getInstance() async {
     return await SharedPreferences.getInstance();
   }
@@ -23,8 +22,6 @@ class SharedPrefHelper {
     if(user == null) {
       return false;
     }
-
     return user;
   }
-
 }

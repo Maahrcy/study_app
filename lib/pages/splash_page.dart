@@ -1,13 +1,13 @@
-
+import 'dart:io';
 import 'package:flutter/material.dart';
-
-import '../data/shared_pref_helper.dart';
-import '../home_page/home.dart';
-import '../login_page/login.dart';
+import '../database/shared_pref_helper.dart';
+import 'package:study_app/pages/home_page/home.dart';
+import 'package:study_app/pages/login_page/login.dart';
+import 'package:study_app/database/db_helper.dart';
+import 'package:study_app/pages/home_page/home_body.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
-
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
@@ -20,10 +20,9 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> loadData() async {
-    bool isLogged = await SharedPrefHelper().getUser();
+    bool login = await SharedPrefHelper().getUser();
     await Future.delayed(const Duration(seconds: 5));
-    if(isLogged == true){
-      // Se logado, chamar HomePage
+    if (login == true) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -33,7 +32,6 @@ class _SplashPageState extends State<SplashPage> {
         ),
       );
     } else {
-      // Chamar página de Login
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -43,17 +41,15 @@ class _SplashPageState extends State<SplashPage> {
         ),
       );
     }
-
-
   }
 
   @override
   Widget build(BuildContext context) {
+    File file = new File('assets/images/teste.jpg');
     return Scaffold(
       backgroundColor: const Color(0xFF10397B),
       body: Center(
-        child: Image.network(
-            'https://upload.wikimedia.org/wikipedia/commons/9/99/Logo-hurb-branca-bg-azul.jpg'),
+        child: Image.file(file),
       ),
     );
   }

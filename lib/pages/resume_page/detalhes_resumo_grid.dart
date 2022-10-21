@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../data/BD.dart';
-import '../domain/resumo.dart';
+import 'package:study_app/database/DB.dart';
+import 'package:study_app/domain/resumo.dart';
 
 class DetalhesResumoGrid extends StatefulWidget {
   const DetalhesResumoGrid({Key? key, required this.resume}) : super(key: key);
@@ -27,7 +26,7 @@ class _DetalhesResumoGridState extends State<DetalhesResumoGrid> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Resumos'),
+                  DB.lusBody('Resumos'),
                 ],
               ),
               TextButton(onPressed: (){},
@@ -45,7 +44,7 @@ class _DetalhesResumoGridState extends State<DetalhesResumoGrid> {
                 Center(
                   child: Text(pacote.titulo,
                   style: TextStyle(
-                    color: BD.tema.textcolor2,
+                    color: DB.tema.textcolor2,
                     fontSize: 24,
                   ),),
                 ),
@@ -55,7 +54,7 @@ class _DetalhesResumoGridState extends State<DetalhesResumoGrid> {
                 Text(
                   pacote.text,
                   style: TextStyle(
-                    color: BD.tema.textcolor3,
+                    color: DB.tema.textcolor3,
                     fontSize: 18,
                   ),
                 ),

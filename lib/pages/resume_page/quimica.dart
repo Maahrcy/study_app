@@ -2,12 +2,11 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/exercise.dart';
-import 'package:study_app/resume_page/mindmap.dart';
-import 'package:study_app/resume_page/desc_pag.dart';
-import 'package:study_app/resume_page/resume.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/pages/resume_page/exercise.dart';
+import 'package:study_app/pages/resume_page/mindmap.dart';
+import 'package:study_app/pages/resume_page/desc_pag.dart';
+import 'package:study_app/pages/resume_page/resume.dart';
+import 'package:study_app/database/DB.dart';
 
 class Quimica extends StatefulWidget{
   const Quimica({Key? key}) : super(key: key);
@@ -40,7 +39,7 @@ class _Quimica extends State<Quimica>{
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                 ),
-                BD.lusBody('Química'),
+                DB.lusBody('Química'),
               ],
             ),
             TextButton(onPressed: (){},

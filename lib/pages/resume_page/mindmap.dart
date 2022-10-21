@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/database/DB.dart';
 
 class MindMapWidget extends StatefulWidget {
   const MindMapWidget({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class _MindMapWidgetState extends State<MindMapWidget> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Retornar'),
+                  DB.lusBody('Retornar'),
                 ],
               ),
               TextButton(onPressed: (){},

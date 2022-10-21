@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:study_app/resume_page/quimica.dart';
+import 'package:study_app/pages/resume_page/quimica.dart';
 
 class Discipline extends StatefulWidget {
   const Discipline({Key? key}) : super(key: key);

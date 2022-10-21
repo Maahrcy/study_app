@@ -1,17 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:study_app/domain/materia.dart';
+import 'package:study_app/pages/resume_page/exercise_widget.dart';
+import 'package:study_app/database/DB.dart';
 
-import '../data/BD.dart';
-
-class MindMapWidget extends StatefulWidget {
-  const MindMapWidget({Key? key}) : super(key: key);
+class Exercise extends StatefulWidget {
+  const Exercise({Key? key}) : super(key: key);
 
   @override
-  State<MindMapWidget> createState() => _MindMapWidgetState();
+  State<Exercise> createState() => _ExerciseState();
 }
 
-class _MindMapWidgetState extends State<MindMapWidget> {
+class _ExerciseState extends State<Exercise> {
+  List<Exercicio> ListaExercicio = DB.ListaExercicioQui;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFAF0D7),
@@ -24,10 +27,10 @@ class _MindMapWidgetState extends State<MindMapWidget> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Retornar'),
+                  DB.lusBody('Retornar'),
                 ],
               ),
-              TextButton(onPressed: (){},
+              TextButton(onPressed: () {},
                 child: Icon(Icons.search,
                     color: Colors.white),
               ),
@@ -43,13 +46,28 @@ class _MindMapWidgetState extends State<MindMapWidget> {
     return ListView(
       children: [
         const SizedBox(height: 20,),
-        Text('Mapas Mentais',
+        Text('Exercícios',
           style: GoogleFonts.sriracha(
             fontSize: 28,
             color: const Color(0xffd9807c),
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
+        ),
+
+        GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 1,
+            mainAxisSpacing: 1,
+            childAspectRatio: 1.5,
+          ),
+          itemCount: ListaExercicio.length,
+          itemBuilder: (context, index) {
+            return ExerciseWidget(
+              exercicio: ListaExercicio[index],
+            );
+          },
         ),
       ],
     );

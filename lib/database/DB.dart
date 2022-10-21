@@ -3,7 +3,7 @@ import '../domain/materia.dart';
 import '../domain/resumo.dart';
 import '../domain/tema.dart';
 
-class BD {
+class DB {
 
   static List<Materia> listaMaterias = [
     Materia(titulo: 'Matemática', exercicio: ListaExercicioMat, mindmaps: [], resumo: listaResumesMat,),
@@ -244,8 +244,6 @@ class BD {
       textcolor1: Colors.white,
       textcolor2: Color(0xffd9807c),
       textcolor3: Colors.black);
-
-
 
   static getTema() {
     return tema;
