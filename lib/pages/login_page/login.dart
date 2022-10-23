@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController userController = TextEditingController();
-  TextEditingController passController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,10 +25,9 @@ class _LoginState extends State<Login> {
   }
 
   buildBody() {
-    return SingleChildScrollView(
-      child: Container(
-        margin: const EdgeInsets.all(20),
-        padding: const EdgeInsets.all(40),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: SingleChildScrollView(
         child: Form(
           key: _formKey,
           child: Column(
@@ -61,6 +60,7 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 16),
               TextFormField(
+                controller: passwordController,
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -73,52 +73,19 @@ class _LoginState extends State<Login> {
                 },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Password'),
-                controller: passController,
               ),
               const SizedBox(height: 33),
               ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    String userInput = userController.text;
-                    String passInput = passController.text;
-
-                    bool result = await UserDao()
-                        .aut(user: userInput, password: passInput);
-
-                    if (result) {
-                      await SharedPrefHelper().login();
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const Home();
-                          },
-                        ),
-                      );
-                    } else {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              content: const Text('Usuário/Senha incorreto(s)'),
-                              actions: <Widget>[
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text('OK'))
-                              ],
-                            );
-                          });
-                    }
-                  }
-                },
+                onPressed: onPressed,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text('Log In'),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               ElevatedButton(
                   onPressed: onPressedRegister,
@@ -134,5 +101,41 @@ class _LoginState extends State<Login> {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return const RegisterUser();
     }));
+  }
+
+  onPressed() async {
+    if (_formKey.currentState!.validate()) {
+      String userInput = userController.text;
+      String passInput = passwordController.text;
+
+      bool result = await UserDao().aut(user: userInput, password: passInput);
+
+      if (result) {
+        await SharedPrefHelper().login();
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const Home();
+            },
+          ),
+        );
+      } else {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                content: const Text('Usuário/Senha incorreto(s)'),
+                actions: <Widget>[
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('OK'))
+                ],
+              );
+            });
+      }
+    }
   }
 }
