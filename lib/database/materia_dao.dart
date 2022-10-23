@@ -8,5 +8,6 @@ class MateriaDao {
     Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * FROM materia';
+    return listaMaterias();
   }
 }

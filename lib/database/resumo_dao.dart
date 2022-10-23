@@ -8,5 +8,6 @@ class ResumoDao {
     Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * FROM materia';
+    return listaResumesMat();
   }
 }
