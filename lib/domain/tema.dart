@@ -12,19 +12,18 @@ class Tema {
     required this.textcolor1,
     required this.textcolor2,
     required this.textcolor3,
-
-});
+  });
   /*CONF*/
-  setTema(numtema){
+  setTema(numtema) {
     numtema++;
     Color? textcolor1;
     Color? textcolor2;
     Color? textcolor3;
 
-    switch(numtema){
+    switch (numtema) {
       case 1:
         textcolor1 = Colors.white;
-        textcolor2 = Color(0xffd9807c);
+        textcolor2 = const Color(0xffd9807c);
         textcolor3 = Colors.black;
         break;
       case 2:
@@ -34,6 +33,10 @@ class Tema {
         setTema(numtema);
         break;
     }
-    return Tema(numtema: numtema, textcolor1: textcolor1, textcolor2: textcolor2, textcolor3: textcolor3);
+    return Tema(
+        numtema: numtema,
+        textcolor1: textcolor1,
+        textcolor2: textcolor2,
+        textcolor3: textcolor3);
   }
 }

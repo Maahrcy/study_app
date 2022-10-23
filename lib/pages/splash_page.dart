@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../database/shared_pref_helper.dart';
 import 'package:study_app/pages/home_page/home.dart';
 import 'package:study_app/pages/login_page/login.dart';
-import 'package:study_app/database/db_helper.dart';
-import 'package:study_app/pages/home_page/home_body.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -45,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    File file = new File('assets/images/teste.jpg');
+    File file = File('assets/images/teste.jpg');
     return Scaffold(
       backgroundColor: const Color(0xFF10397B),
       body: Center(

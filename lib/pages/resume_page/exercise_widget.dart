@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/domain/materia.dart';
@@ -28,7 +27,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
         );
       },
       child: Card(
-        color: const  Color(0xFFFFD9C0),
+        color: const Color(0xFFFFD9C0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -48,4 +47,3 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
     );
   }
 }
-

@@ -2,16 +2,16 @@ import 'package:study_app/database/db_helper.dart';
 import 'package:study_app/domain/user.dart';
 import 'package:sqflite/sqflite.dart';
 
-class userDao {
+class UserDao {
   saveUser({required User user}) async {
-    db_helper dbHelper = db_helper();
-    Database db = dbHelper.init_db();
+    DbHelper dbHelper = DbHelper();
+    Database db = dbHelper.initDB();
     await db.insert('USER', user.toJson());
   }
 
-  Future<bool> aut ({required String user, required String password}) async {
-    db_helper dbHelper = db_helper();
-    Database db = await dbHelper.init_db();
+  Future<bool> aut({required String user, required String password}) async {
+    DbHelper dbHelper = DbHelper();
+    Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * FROM USER WHERE username = ? AND password = ?;';
     var result = await db.rawQuery(sql, [user, password]);
@@ -19,8 +19,8 @@ class userDao {
   }
 
   userList() async {
-    db_helper dbHelper = db_helper();
-    Database db = await dbHelper.init_db();
+    DbHelper dbHelper = DbHelper();
+    Database db = await dbHelper.initDB();
 
     String sql = 'SELECT * FROM USER;';
     var result = await db.rawQuery(sql);

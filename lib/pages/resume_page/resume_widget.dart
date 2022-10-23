@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/pages/resume_page/detalhes_resumo_grid.dart';
@@ -30,7 +29,7 @@ class _ResumeWidgetState extends State<ResumeWidget> {
         );
       },
       child: Card(
-        color: const  Color(0xFFFFD9C0),
+        color: const Color(0xFFFFD9C0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),

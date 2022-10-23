@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/domain/user.dart';
 import 'package:study_app/database/user_dao.dart';
-import '../home_page/home.dart';
 
 class RegisterUser extends StatefulWidget {
   const RegisterUser({Key? key}) : super(key: key);
@@ -25,21 +24,21 @@ class _RegisterUserState extends State<RegisterUser> {
 
   buildBody() {
     return Container(
-      margin: EdgeInsets.all(20),
-      padding: EdgeInsets.all(40),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(40),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
+            const SizedBox(
                 height: 200,
                 width: 200,
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/perfil.jpg'),
                 )),
             const SizedBox(height: 35),
-            Align(
+            const Align(
                 alignment: Alignment.topCenter,
                 child: Text("REGISTER USER",
                     textDirection: TextDirection.ltr,
@@ -74,17 +73,22 @@ class _RegisterUserState extends State<RegisterUser> {
             ),
             const SizedBox(height: 33),
             ElevatedButton(
-              onPressed: ()  async {
+              onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   String userInput = userController.text;
                   String passInput = passController.text;
 
-                  User createdUser = User(username: userInput, password: passInput);
-                  await userDao().saveUser(user: createdUser);
-                  SnackBar(content: Text('Usuário registrado'),);
+                  User createdUser =
+                      User(username: userInput, password: passInput);
+                  await UserDao().saveUser(user: createdUser);
+                  const SnackBar(
+                    content: Text('Usuário registrado'),
+                  );
                   Navigator.pop(context);
                 } else {
-                 SnackBar(content: Text('Algo deu errado'),);
+                  const SnackBar(
+                    content: Text('Algo deu errado'),
+                  );
                 }
               },
               child: Row(
@@ -99,5 +103,6 @@ class _RegisterUserState extends State<RegisterUser> {
       ),
     );
   }
+
   onPressedRegister() {}
 }

@@ -16,30 +16,27 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF0D7),
+      backgroundColor: const Color(0xFFFAF0D7),
       appBar: AppBar(
-        title:   Text('Study App', style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-        ),),
-        backgroundColor: Color(0xFF8CC0DE),
+        title: const Text(
+          'Study App',
+          style: TextStyle(
+              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: const Color(0xFF8CC0DE),
         actions: [
-          IconButton(onPressed: () {
-            SharedPrefHelper().logout();
-            Navigator.pushReplacement(
-                context, 
-                MaterialPageRoute(
-                    builder: (context) {
-                      return const Login();
-                    }));
-            
-          }, 
+          IconButton(
+              onPressed: () {
+                SharedPrefHelper().logout();
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) {
+                  return const Login();
+                }));
+              },
               icon: const Icon(Icons.logout))
         ],
-
       ),
-      drawer: VerticalNavBar(),
+      drawer: const VerticalNavBar(),
       body: buildBody(context),
     );
   }
@@ -49,151 +46,180 @@ class _HomeBodyState extends State<HomeBody> {
       margin: const EdgeInsets.only(left: 20.0, right: 20.0),
       child: ListView(
         children: [
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 12),
-            child: Text(
-              'Bem-vindo, estudante!',
-              style: GoogleFonts.sriracha(
-                fontSize: 28,
-                color: const Color(0xffd9807c),
-                fontWeight: FontWeight.bold,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-
-          ListTile(    leading: const Icon(Icons.menu_book),
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(color:  Color(0xFFFFD9C0), width: 3),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            tileColor:  Color(0xFFFFD9C0),
-            title: Row(
-              children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 3, bottom: 3,),
-                    child: Row(
-                      children: const [
-                        SizedBox(width: 13,),
-                        Text('Linguagens', style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),),
-                        SizedBox(width: 140,),
-                      ],
-                    ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: Text(
+                  'Bem-vindo, estudante!',
+                  style: GoogleFonts.sriracha(
+                    fontSize: 28,
+                    color: const Color(0xffd9807c),
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ],
-            ),
-          ),
-          SizedBox(height: 13),
-
-          ListTile(    leading: const Icon(Icons.menu_book),
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(color:  Color(0xFFFFD9C0), width: 3),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            tileColor:  Color(0xFFFFD9C0),
-            title: Row(
-              children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 3, bottom: 3,),
-                    child: Row(
-                      children: const [
-                        SizedBox(width: 13,),
-                        Text('Humanas', style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),),
-                        SizedBox(width: 140,),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 13),
-          ListTile(    leading: const Icon(Icons.menu_book),
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(color:  Color(0xFFFFD9C0), width: 3),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            tileColor:  Color(0xFFFFD9C0),
-            title: Row(
-              children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 3, bottom: 3,),
-                    child: Row(
-                      children: const [
-                        SizedBox(width: 13,),
-                        Text('Exatas', style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),),
-                        SizedBox(width: 140,),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 13),
-          InkWell(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Discipline();
-              }));
-            },
-
-            child:  ListTile(    leading: const Icon(Icons.menu_book),
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(color:  Color(0xFFFFD9C0), width: 3),
-                borderRadius: BorderRadius.circular(8),
               ),
-              tileColor:  Color(0xFFFFD9C0),
-              title: Row(
-                children: [
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 3, bottom: 3,),
+              const SizedBox(
+                height: 100,
+              ),
+              ListTile(
+                leading: const Icon(Icons.menu_book),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                tileColor: const Color(0xFFFFD9C0),
+                title: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 3,
+                        bottom: 3,
+                      ),
                       child: Row(
                         children: const [
-                          SizedBox(width: 13,),
-                          Text('Natureza', style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                          ),),
-                          SizedBox(width: 140,),
+                          SizedBox(
+                            width: 13,
+                          ),
+                          Text(
+                            'Linguagens',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 140,
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ),
+              const SizedBox(height: 13),
+              ListTile(
+                leading: const Icon(Icons.menu_book),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                tileColor: const Color(0xFFFFD9C0),
+                title: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 3,
+                        bottom: 3,
+                      ),
+                      child: Row(
+                        children: const [
+                          SizedBox(
+                            width: 13,
+                          ),
+                          Text(
+                            'Humanas',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 140,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 13),
+              ListTile(
+                leading: const Icon(Icons.menu_book),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                tileColor: const Color(0xFFFFD9C0),
+                title: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 3,
+                        bottom: 3,
+                      ),
+                      child: Row(
+                        children: const [
+                          SizedBox(
+                            width: 13,
+                          ),
+                          Text(
+                            'Exatas',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 140,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 13),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Discipline();
+                  }));
+                },
+                child: ListTile(
+                  leading: const Icon(Icons.menu_book),
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: Color(0xFFFFD9C0), width: 3),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  tileColor: const Color(0xFFFFD9C0),
+                  title: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 3,
+                          bottom: 3,
+                        ),
+                        child: Row(
+                          children: const [
+                            SizedBox(
+                              width: 13,
+                            ),
+                            Text(
+                              'Natureza',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              width: 140,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
-      )
-      ],
-    ),
+      ),
     );
   }
 }

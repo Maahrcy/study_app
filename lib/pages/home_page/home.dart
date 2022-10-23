@@ -14,10 +14,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int selectedIndex = 0;
   List pages = [
-    HomeBody(),
-    Discipline(),
-    Profile(),
-    ConfigPage(),
+    const HomeBody(),
+    const Discipline(),
+    const Profile(),
+    const ConfigPage(),
   ];
 
   @override
@@ -26,56 +26,61 @@ class _HomeState extends State<Home> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 50,),
-            ListTile(
+            const SizedBox(
+              height: 50,
+            ),
+            const ListTile(
               title: Center(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage('https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
+                  backgroundImage: NetworkImage(
+                      'https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
                 ),
               ),
             ),
             ListTile(
-              title: Center(
+              title: const Center(
                 child: Text('Fulano de Tal'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
-            SizedBox(height: 100,),
+            const SizedBox(
+              height: 100,
+            ),
             ListTile(
               shape: RoundedRectangleBorder(
-                side: BorderSide(color: Colors.black, width: 1),
+                side: const BorderSide(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(5),
               ),
-              title: Center(
+              title: const Center(
                 child: Text('Home'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
               shape: RoundedRectangleBorder(
-                side: BorderSide(color: Colors.black, width: 1),
+                side: const BorderSide(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(5),
               ),
-              title: Center(
+              title: const Center(
                 child: Text('Material'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
               shape: RoundedRectangleBorder(
-                side: BorderSide(color: Colors.black, width: 1),
+                side: const BorderSide(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(5),
               ),
-              title: Center(
-                child:Text('Profile'),
+              title: const Center(
+                child: Text('Profile'),
               ),
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
             ),
@@ -87,7 +92,7 @@ class _HomeState extends State<Home> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         unselectedItemColor: Colors.green,
-        selectedItemColor: Color(0xFF8CC0DE),
+        selectedItemColor: const Color(0xFF8CC0DE),
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
@@ -95,8 +100,14 @@ class _HomeState extends State<Home> {
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '',),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: '',),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            label: '',
+          ),
         ],
       ),
     );
