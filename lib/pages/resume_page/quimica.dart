@@ -1,22 +1,19 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/exercise.dart';
-import 'package:study_app/resume_page/mindmap.dart';
-import 'package:study_app/resume_page/desc_pag.dart';
-import 'package:study_app/resume_page/resume.dart';
+import 'package:study_app/pages/resume_page/exercise.dart';
+import 'package:study_app/pages/resume_page/mindmap.dart';
+import 'package:study_app/pages/resume_page/desc_pag.dart';
+import 'package:study_app/pages/resume_page/resume.dart';
+import 'package:study_app/database/DB.dart';
 
-import '../data/BD.dart';
-
-class Quimica extends StatefulWidget{
+class Quimica extends StatefulWidget {
   const Quimica({Key? key}) : super(key: key);
 
   @override
-  _Quimica createState()=> _Quimica();
+  _Quimica createState() => _Quimica();
 }
 
-class _Quimica extends State<Quimica>{
+class _Quimica extends State<Quimica> {
   Desc item1 = Desc(
     titlo: 'Resumo',
   );
@@ -32,30 +29,29 @@ class _Quimica extends State<Quimica>{
     return Scaffold(
       backgroundColor: const Color(0xFFFAF0D7),
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                ),
-                BD.lusBody('Química'),
-              ],
-            ),
-            TextButton(onPressed: (){},
-              child: const Icon(Icons.search,
-                  color: Colors.white),
-            ),
-          ],
-        ),
-          backgroundColor: const Color(0xFF8CC0DE)
-      ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                  ),
+                  DB.lusBody('Química'),
+                ],
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Icon(Icons.search, color: Colors.white),
+              ),
+            ],
+          ),
+          backgroundColor: const Color(0xFF8CC0DE)),
       body: buildBody(),
     );
   }
 
-  buildBody(){
+  buildBody() {
     return ListView(
       children: [
         const SizedBox(height: 20),
@@ -105,38 +101,40 @@ class _Quimica extends State<Quimica>{
               ),
             );
           },
-          child:  buildField('Mapas mentais'),
+          child: buildField('Mapas mentais'),
         ),
       ],
     );
   }
 }
 
-buildField(String text){
+buildField(String text) {
   return Container(
     height: 50,
     margin: const EdgeInsets.fromLTRB(10, 16, 10, 15),
     padding: const EdgeInsets.all(6),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(8),
-      color: const  Color(0xFFFFD9C0),
+      color: const Color(0xFFFFD9C0),
     ),
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: const BoxDecoration(
-        ),
+        decoration: const BoxDecoration(),
         child: Row(
           children: [
-            const Icon(Icons.menu_book,),
+            const Icon(
+              Icons.menu_book,
+            ),
             //color: Color(0xffd)),
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text(text,
+              child: Text(
+                text,
                 style: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             )

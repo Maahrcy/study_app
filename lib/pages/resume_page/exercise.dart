@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:study_app/domain/materia.dart';
-import 'package:study_app/resume_page/exercise_widget.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/pages/resume_page/exercise_widget.dart';
+import 'package:study_app/database/DB.dart';
 
 class Exercise extends StatefulWidget {
   const Exercise({Key? key}) : super(key: key);
@@ -14,11 +12,12 @@ class Exercise extends StatefulWidget {
 }
 
 class _ExerciseState extends State<Exercise> {
-  List<Exercicio> ListaExercicio = BD.ListaExercicioQui;
+  List<Exercicio> ListaExercicio = DB.ListaExercicioQui;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF0D7),
+      backgroundColor: const Color(0xFFFAF0D7),
       appBar: AppBar(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,17 +27,16 @@ class _ExerciseState extends State<Exercise> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Retornar'),
+                  DB.lusBody('Retornar'),
                 ],
               ),
-              TextButton(onPressed: () {},
-                child: Icon(Icons.search,
-                    color: Colors.white),
+              TextButton(
+                onPressed: () {},
+                child: const Icon(Icons.search, color: Colors.white),
               ),
             ],
           ),
-          backgroundColor: Color(0xFF8CC0DE)
-      ),
+          backgroundColor: const Color(0xFF8CC0DE)),
       body: buildBody(),
     );
   }
@@ -46,8 +44,11 @@ class _ExerciseState extends State<Exercise> {
   buildBody() {
     return ListView(
       children: [
-        const SizedBox(height: 20,),
-        Text('Exercícios',
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Exercícios',
           style: GoogleFonts.sriracha(
             fontSize: 28,
             color: const Color(0xffd9807c),
@@ -55,7 +56,6 @@ class _ExerciseState extends State<Exercise> {
           ),
           textAlign: TextAlign.center,
         ),
-
         GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

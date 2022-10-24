@@ -3,28 +3,56 @@ import '../domain/materia.dart';
 import '../domain/resumo.dart';
 import '../domain/tema.dart';
 
-class BD {
-
+class DB {
   static List<Materia> listaMaterias = [
-    Materia(titulo: 'Matemática', exercicio: ListaExercicioMat, mindmaps: [], resumo: listaResumesMat,),
-    Materia(titulo: 'Portugûes', exercicio: ListaExercicioPor, mindmaps: [], resumo: listaResumesPor,),
-    Materia(titulo: 'Química', exercicio: ListaExercicioQui, mindmaps: [], resumo: listaResumesMat,),
-    Materia(titulo: 'História', exercicio: ListaExercicioHis, mindmaps: [], resumo: listaResumesHis,),
-    Materia(titulo: 'Geografia', exercicio: ListaExercicioGeo, mindmaps: [], resumo: listaResumesGeo,),
-    Materia(titulo: 'Biologia', exercicio:ListaExercicioBio, mindmaps: [], resumo: listaResumesBio,),
-    Materia(titulo: 'Física', exercicio: ListaExercicioFis, mindmaps: [], resumo: listaResumesFis,),
+    Materia(
+      titulo: 'Matemática',
+      exercicio: ListaExercicioMat,
+      mindmaps: [],
+      resumo: listaResumesMat,
+    ),
+    Materia(
+      titulo: 'Portugûes',
+      exercicio: ListaExercicioPor,
+      mindmaps: [],
+      resumo: listaResumesPor,
+    ),
+    Materia(
+      titulo: 'Química',
+      exercicio: ListaExercicioQui,
+      mindmaps: [],
+      resumo: listaResumesMat,
+    ),
+    Materia(
+      titulo: 'História',
+      exercicio: ListaExercicioHis,
+      mindmaps: [],
+      resumo: listaResumesHis,
+    ),
+    Materia(
+      titulo: 'Geografia',
+      exercicio: ListaExercicioGeo,
+      mindmaps: [],
+      resumo: listaResumesGeo,
+    ),
+    Materia(
+      titulo: 'Biologia',
+      exercicio: ListaExercicioBio,
+      mindmaps: [],
+      resumo: listaResumesBio,
+    ),
+    Materia(
+      titulo: 'Física',
+      exercicio: ListaExercicioFis,
+      mindmaps: [],
+      resumo: listaResumesFis,
+    ),
   ];
 
   static List<Exercicio> ListaExercicioMat = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesMat = [
@@ -46,15 +74,9 @@ class BD {
   ];
 
   static List<Exercicio> ListaExercicioPor = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesPor = [
@@ -76,15 +98,9 @@ class BD {
   ];
 
   static List<Exercicio> ListaExercicioQui = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesQui = [
@@ -112,17 +128,10 @@ class BD {
         text: '  Lorem input não sei oq não sei oq não sei oq')
   ];
 
-
   static List<Exercicio> ListaExercicioHis = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesHis = [
@@ -144,15 +153,9 @@ class BD {
   ];
 
   static List<Exercicio> ListaExercicioGeo = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesGeo = [
@@ -174,15 +177,9 @@ class BD {
   ];
 
   static List<Exercicio> ListaExercicioBio = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesBio = [
@@ -204,15 +201,9 @@ class BD {
   ];
 
   static List<Exercicio> ListaExercicioFis = [
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
-    Exercicio(
-        titulo: 'Exercício 1',
-        text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
+    Exercicio(titulo: 'Exercício 1', text: 'text'),
   ];
 
   static List<Resumo> listaResumesFis = [
@@ -238,14 +229,11 @@ class BD {
     return listaMaterias;
   }
 
-
   static Tema tema = Tema(
       numtema: 1,
       textcolor1: Colors.white,
-      textcolor2: Color(0xffd9807c),
+      textcolor2: const Color(0xffd9807c),
       textcolor3: Colors.black);
-
-
 
   static getTema() {
     return tema;
@@ -260,6 +248,4 @@ class BD {
       ),
     );
   }
-
-
 }

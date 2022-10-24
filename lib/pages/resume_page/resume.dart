@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_app/domain/resumo.dart';
-import 'package:study_app/resume_page/resume_widget.dart';
-
-import '../data/BD.dart';
+import 'package:study_app/pages/resume_page/resume_widget.dart';
+import 'package:study_app/database/DB.dart';
 
 class Resume extends StatefulWidget {
   const Resume({Key? key}) : super(key: key);
@@ -13,11 +11,12 @@ class Resume extends StatefulWidget {
 }
 
 class _ResumeState extends State<Resume> {
-  List<Resumo> listaResumes = BD.listaResumesMat;
+  List<Resumo> listaResumes = DB.listaResumesMat;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF0D7),
+      backgroundColor: const Color(0xFFFAF0D7),
       appBar: AppBar(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,17 +26,16 @@ class _ResumeState extends State<Resume> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                   ),
-                  BD.lusBody('Resumos'),
+                  DB.lusBody('Resumos'),
                 ],
               ),
-              TextButton(onPressed: (){},
-                child: Icon(Icons.search,
-                    color: Colors.white),
+              TextButton(
+                onPressed: () {},
+                child: const Icon(Icons.search, color: Colors.white),
               ),
             ],
           ),
-          backgroundColor: Color(0xFF8CC0DE)
-      ),
+          backgroundColor: const Color(0xFF8CC0DE)),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(

@@ -1,20 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:study_app/resume_page/detalhes_resumo_grid.dart';
+import 'package:study_app/domain/materia.dart';
+import 'package:study_app/pages/resume_page/detalhes_exercicio_grid.dart';
+import 'package:study_app/database/DB.dart';
 
-import '../data/BD.dart';
-import '../domain/resumo.dart';
+class ExerciseWidget extends StatefulWidget {
+  const ExerciseWidget({Key? key, required this.exercicio}) : super(key: key);
 
-class ResumeWidget extends StatefulWidget {
-  const ResumeWidget({Key? key, required this.resume}) : super(key: key);
-
-  final Resumo resume;
+  final Exercicio exercicio;
   @override
-  State<ResumeWidget> createState() => _ResumeWidgetState();
+  State<ExerciseWidget> createState() => _ExerciseWidgetState();
 }
 
-class _ResumeWidgetState extends State<ResumeWidget> {
+class _ExerciseWidgetState extends State<ExerciseWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -23,15 +21,13 @@ class _ResumeWidgetState extends State<ResumeWidget> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return DetalhesResumoGrid(
-                resume: widget.resume,
-              );
+              return DetalhesExercicioGrid(exercicio: widget.exercicio);
             },
           ),
         );
       },
       child: Card(
-        color: const  Color(0xFFFFD9C0),
+        color: const Color(0xFFFFD9C0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
@@ -39,10 +35,10 @@ class _ResumeWidgetState extends State<ResumeWidget> {
           padding: const EdgeInsets.all(16.0),
           child: Center(
             child: Text(
-              widget.resume.titulo,
+              widget.exercicio.titulo,
               style: GoogleFonts.sriracha(
                 fontSize: 24,
-                color: BD.tema.textcolor1,
+                color: DB.tema.textcolor1,
               ),
             ),
           ),
