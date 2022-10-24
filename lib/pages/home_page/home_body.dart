@@ -17,25 +17,7 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFAF0D7),
-      appBar: AppBar(
-        title: const Text(
-          'Study App',
-          style: TextStyle(
-              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: const Color(0xFF8CC0DE),
-        actions: [
-          IconButton(
-              onPressed: () {
-                SharedPrefHelper().logout();
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) {
-                  return const Login();
-                }));
-              },
-              icon: const Icon(Icons.logout))
-        ],
-      ),
+
       drawer: const VerticalNavBar(),
       body: buildBody(context),
     );

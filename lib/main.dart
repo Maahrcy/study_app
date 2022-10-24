@@ -6,5 +6,6 @@ void main() {
     const MaterialApp(
       home: SplashPage(),
     ),
+
   );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_app/database/user_dao.dart';
 import 'package:study_app/pages/home_page/home.dart';
 import 'package:study_app/pages/register_page/register.dart';
@@ -18,6 +19,108 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       child: Scaffold(
         body: buildBody(),
       ),
@@ -100,7 +203,10 @@ class _LoginState extends State<Login> {
   onPressedRegister() {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return const RegisterUser();
-    }));
+    })).then((value) async {
+      SharedPreferences instance = await SharedPreferences.getInstance();
+      instance.setString('NAME', userController.text);
+    });
   }
 
   onPressed() async {

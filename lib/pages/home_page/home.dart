@@ -3,6 +3,7 @@ import 'package:study_app/pages/discipline_page/discipline.dart';
 import 'package:study_app/pages/home_page/home_body.dart';
 import 'package:study_app/pages/profile_page/profile.dart';
 import 'package:study_app/pages/config_page/config_page.dart';
+import 'package:study_app/search/search.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isSearchEnabled = true;
   int selectedIndex = 0;
   List pages = [
     const HomeBody(),
@@ -23,6 +25,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -91,8 +94,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
-        unselectedItemColor: Colors.green,
-        selectedItemColor: const Color(0xFF8CC0DE),
+        unselectedItemColor: const Color(0xFF8CC0DE),
+        selectedItemColor: const Color(0xFF8CDECE),
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
@@ -108,8 +111,56 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.book),
             label: '',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '',
+          ),
         ],
       ),
     );
   }
+
+  buildAppBar() {
+    String appTitle = "Study App";
+
+    return AppBar(
+        elevation: 1,
+        backgroundColor: const Color(0xFF8CC0DE),
+        title: !isSearchEnabled ? Text(appTitle) : const TextField(
+          style: TextStyle(
+            color: Colors.white,
+
+          ),
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: Icon(Icons.search, color: Colors.white),
+              hintText: "Search...",
+              hintStyle: TextStyle(color: Colors.white)
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(isSearchEnabled ? Icons.close : Icons.search),
+            onPressed: (){
+              setState(() {
+                isSearchEnabled = !isSearchEnabled;
+              });
+            },
+          ),
+/*
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.filter_list),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.more_vert),
+          )
+*/
+        ]
+
+    );
+  }
+
+
 }

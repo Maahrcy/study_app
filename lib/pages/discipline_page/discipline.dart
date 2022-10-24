@@ -13,20 +13,6 @@ class _DisciplineState extends State<Discipline> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFAF0D7),
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: const [
-                Text('Natureza'),
-              ],
-            ),
-            const Icon(Icons.search)
-          ],
-        ),
-        backgroundColor: const Color(0xFF8CC0DE),
-      ),
       body: buildBody(),
     );
   }
