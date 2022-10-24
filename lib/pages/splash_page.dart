@@ -29,7 +29,8 @@ class _SplashPageState extends State<SplashPage> {
           },
         ),
       );
-    } else {
+    }
+    else {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
