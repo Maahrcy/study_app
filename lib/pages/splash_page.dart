@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import '../database/shared_pref_helper.dart';
 import 'package:study_app/pages/home_page/home.dart';
@@ -32,8 +31,7 @@ class _SplashPageState extends State<SplashPage> {
           },
         ),
       );
-    }
-    else {
+    } else {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -50,7 +48,14 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: const Color(0xFF10397B),
       body: Center(
-        child: Image.asset('assets/images/books.jpg'),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                'assets/images/books.jpg',
+                height: 200,
+                width: 200,
+              ),
+            ),
       ),
     );
   }
