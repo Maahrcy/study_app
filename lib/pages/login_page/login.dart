@@ -98,13 +98,12 @@ class _LoginState extends State<Login> {
     );
   }
 
-  onPressedRegister() {
+  onPressedRegister() async {
+
+
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return const RegisterUser();
-    })).then((value) async {
-      SharedPreferences instance = await SharedPreferences.getInstance();
-      instance.setString('NAME', userController.text);
-    });
+    }));
   }
 
   onPressed() async {
@@ -115,7 +114,11 @@ class _LoginState extends State<Login> {
       bool result = await UserDao().aut(user: userInput, password: passInput);
 
       if (result) {
+        SharedPreferences instance = await SharedPreferences.getInstance();
+        instance.setString('NAME', userController.text);
+
         await SharedPrefHelper().login();
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(

@@ -5,7 +5,7 @@ import 'package:path/path.dart';
 class DbHelper {
   initDB() async {
     String dbPath = await getDatabasesPath();
-    String dbName = join(dbPath, 'mydb.db');
+    String dbName = join(dbPath, 'database.db');
     var db = await openDatabase(
       dbName,
       version: 1,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/domain/user.dart';
 import 'package:study_app/database/user_dao.dart';
+import 'package:study_app/pages/home_page/home.dart';
 
 class RegisterUser extends StatefulWidget {
   const RegisterUser({Key? key}) : super(key: key);
@@ -106,5 +107,7 @@ class _RegisterUserState extends State<RegisterUser> {
     );
   }
 
-  onPressedRegister() {}
+  onPressedRegister() {
+
+  }
 }

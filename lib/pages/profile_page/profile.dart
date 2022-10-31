@@ -9,10 +9,19 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  Future<String> getUserName() async {
+  String name = "Usuario";
+
+  Future<void> getUserName() async {
     SharedPreferences instance = await SharedPreferences.getInstance();
-    String name = instance.getString('NAME')! ?? "Erro" ;
-    return name;
+    setState(() {
+      name = instance.getString('NAME') ?? "Usuario Teste" ;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUserName();
   }
 
   @override
@@ -41,7 +50,7 @@ class _ProfileState extends State<Profile> {
               height: 15,
             ),
             Text(
-              getUserName().toString(),
+              name,
               style: const TextStyle(fontSize: 16),
             ),
             Text("Your Grade", style: TextStyle(fontSize: 16))
