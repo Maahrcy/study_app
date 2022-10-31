@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/database/shared_pref_helper.dart';
 import 'package:study_app/pages/discipline_page/discipline.dart';
 import 'package:study_app/pages/home_page/home_body.dart';
+import 'package:study_app/pages/login_page/login.dart';
 import 'package:study_app/pages/profile_page/profile.dart';
 import 'package:study_app/pages/config_page/config_page.dart';
 import 'package:study_app/search/search.dart';
@@ -140,25 +142,15 @@ class _HomeState extends State<Home> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(isSearchEnabled ? Icons.close : Icons.search),
             onPressed: (){
-              setState(() {
-                isSearchEnabled = !isSearchEnabled;
-              });
-            },
-          ),
-/*
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.filter_list),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_vert),
-          )
-*/
-        ]
-
+              SharedPrefHelper().logout();
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {return const Login();}
+              ));
+    },  icon: const Icon(
+    Icons.logout_outlined,
+    color: Colors.white,
+    ))
+        ],
     );
   }
 
