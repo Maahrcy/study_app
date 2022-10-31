@@ -98,10 +98,10 @@ class _LoginState extends State<Login> {
     );
   }
 
-  onPressedRegister() async {
-
-
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
+  onPressedRegister() {
+    Navigator.push(context,
+        MaterialPageRoute(
+            builder: (context) {
       return const RegisterUser();
     }));
   }

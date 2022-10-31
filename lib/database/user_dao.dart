@@ -3,9 +3,11 @@ import 'package:study_app/domain/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserDao {
-  saveUser({required User user}) async {
+  Future<void> saveUser({required User user}) async {
     DbHelper dbHelper = DbHelper();
-    Database db = dbHelper.initDB();
+    Database db = await dbHelper.initDB();
+    print('sim');
+    print('entrou aq');
     await db.insert('USER', user.toJson());
   }
 

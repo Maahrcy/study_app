@@ -6,6 +6,7 @@ class DbHelper {
   initDB() async {
     String dbPath = await getDatabasesPath();
     String dbName = join(dbPath, 'database.db');
+    print('chegad aqui');
     var db = await openDatabase(
       dbName,
       version: 1,

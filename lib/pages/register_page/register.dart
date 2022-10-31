@@ -75,24 +75,7 @@ class _RegisterUserState extends State<RegisterUser> {
               ),
               const SizedBox(height: 33),
               ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    String userInput = userController.text;
-                    String passInput = passController.text;
-
-                    User createdUser =
-                        User(username: userInput, password: passInput);
-                    await UserDao().saveUser(user: createdUser);
-                    const SnackBar(
-                      content: Text('Usuário registrado'),
-                    );
-                    Navigator.pop(context);
-                  } else {
-                    const SnackBar(
-                      content: Text('Algo deu errado'),
-                    );
-                  }
-                },
+                onPressed: onPressedRegister,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -107,7 +90,21 @@ class _RegisterUserState extends State<RegisterUser> {
     );
   }
 
-  onPressedRegister() {
-
+  onPressedRegister() async {
+    if (_formKey.currentState!.validate()) {
+      String userInput = userController.text;
+      String passInput = passController.text;
+      User createdUser = User(username: userInput, password: passInput);
+      print('usuario: ${createdUser.username}');
+      await UserDao().saveUser(user: createdUser);
+      const SnackBar(
+        content: Text('Usuário registrado'),
+      );
+      Navigator.pop(context);
+    } else {
+      const SnackBar(
+        content: Text('Algo deu errado'),
+      );
+    }
   }
 }
