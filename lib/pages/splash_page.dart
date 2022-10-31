@@ -47,11 +47,10 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    File file = File('assets/images/teste.jpg');
     return Scaffold(
       backgroundColor: const Color(0xFF10397B),
       body: Center(
-        child: Image.file(file),
+        child: Image.asset('assets/images/books.jpg'),
       ),
     );
   }
