@@ -4,6 +4,9 @@ import '../database/shared_pref_helper.dart';
 import 'package:study_app/pages/home_page/home.dart';
 import 'package:study_app/pages/login_page/login.dart';
 
+import 'home_page/home.dart';
+import 'login_page/login.dart';
+
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
   @override
