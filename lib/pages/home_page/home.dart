@@ -5,7 +5,8 @@ import 'package:study_app/pages/home_page/home_body.dart';
 import 'package:study_app/pages/login_page/login.dart';
 import 'package:study_app/pages/profile_page/profile.dart';
 import 'package:study_app/pages/config_page/config_page.dart';
-//teste
+import 'package:study_app/search/search.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
