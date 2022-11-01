@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/domain/user.dart';
 import 'package:study_app/database/user_dao.dart';
-import 'package:study_app/pages/home_page/home.dart';
+import 'package:study_app/pages/login_page/login.dart';
 
 class RegisterUser extends StatefulWidget {
   const RegisterUser({Key? key}) : super(key: key);
@@ -97,10 +97,33 @@ class _RegisterUserState extends State<RegisterUser> {
       User createdUser = User(username: userInput, password: passInput);
       print('usuario: ${createdUser.username}');
       await UserDao().saveUser(user: createdUser);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: const Text('Usuário registrado com sucesso.'),
+              actions: <Widget>[
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const Login();
+                          },
+                        ),
+                      );
+                    },
+                    child: const Text('OK'))
+              ],
+            );
+          });
+      /*
       const SnackBar(
         content: Text('Usuário registrado'),
       );
-      Navigator.pop(context);
+      */
+      //Navigator.pop(context);
     } else {
       const SnackBar(
         content: Text('Algo deu errado'),
