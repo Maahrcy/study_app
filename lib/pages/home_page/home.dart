@@ -51,8 +51,7 @@ class _HomeState extends State<Home> {
             const ListTile(
               title: Center(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://flyclipart.com/profile-icon-png-black-profile-icon-png-196391'),
+                  backgroundImage: AssetImage('assets/images/perfil.jpg'),
                 ),
               ),
             ),

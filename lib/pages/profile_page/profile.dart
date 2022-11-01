@@ -36,6 +36,7 @@ class _ProfileState extends State<Profile> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
               CircleAvatar(
+                backgroundImage: AssetImage('assets/images/perfil.jpg'),
                 radius: 50,
               ),
               SizedBox(
