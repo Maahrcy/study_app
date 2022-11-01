@@ -87,7 +87,9 @@ class _HomeState extends State<Home> {
                 child: Text('Material'),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const Discipline();
+                }));
               },
             ),
             ListTile(
@@ -99,7 +101,23 @@ class _HomeState extends State<Home> {
                 child: Text('Profile'),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const Profile();
+                }));
+              },
+            ),
+            ListTile(
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              title: const Center(
+                child: Text('Settings'),
+              ),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ConfigPage();
+                }));
               },
             ),
           ],
@@ -128,6 +146,10 @@ class _HomeState extends State<Home> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
             label: '',
           ),
         ],

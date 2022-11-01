@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:study_app/pages/home_page/home.dart';
 import 'package:study_app/pages/resume_page/quimica.dart';
+import '../config_page/config_page.dart';
+import '../profile_page/profile.dart';
 
 class Discipline extends StatefulWidget {
   const Discipline({Key? key}) : super(key: key);
@@ -9,15 +12,22 @@ class Discipline extends StatefulWidget {
 }
 
 class _DisciplineState extends State<Discipline> {
+  int selectedIndex = 0;
+  List pages = [
+    const Home(),
+    const Discipline(),
+    const Profile(),
+    const ConfigPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFAF0D7),
-      body: buildBody(),
+      body: buildBody(context),
     );
   }
 
-  buildBody() {
+  buildBody(context) {
     return ListView(
       children: [
         Container(
