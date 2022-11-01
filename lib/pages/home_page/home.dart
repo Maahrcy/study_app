@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_app/database/shared_pref_helper.dart';
 import 'package:study_app/pages/discipline_page/discipline.dart';
 import 'package:study_app/pages/home_page/home_body.dart';
 import 'package:study_app/pages/login_page/login.dart';
 import 'package:study_app/pages/profile_page/profile.dart';
 import 'package:study_app/pages/config_page/config_page.dart';
-import 'package:study_app/pages/home_page/vertical_navbar_widget.dart';
 import 'package:study_app/search/search.dart';
 
 class Home extends StatefulWidget {
@@ -17,20 +15,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String name = "Usuario";
-  Future<void> getUserName() async {
-    SharedPreferences instance = await SharedPreferences.getInstance();
-    setState(() {
-      name = instance.getString('NAME') ?? "Usuario Teste" ;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getUserName();
-  }
-
   bool isSearchEnabled = true;
   int selectedIndex = 0;
   List pages = [
@@ -59,8 +43,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             ListTile(
-              title: Center(
-                child: Text(name),
+              title: const Center(
+                child: Text('Fulano de Tal'),
               ),
               onTap: () {
                 Navigator.pop(context);
