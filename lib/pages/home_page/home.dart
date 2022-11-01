@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_app/database/shared_pref_helper.dart';
 import 'package:study_app/pages/discipline_page/discipline.dart';
 import 'package:study_app/pages/home_page/home_body.dart';
 import 'package:study_app/pages/login_page/login.dart';
 import 'package:study_app/pages/profile_page/profile.dart';
 import 'package:study_app/pages/config_page/config_page.dart';
+import 'package:study_app/pages/home_page/vertical_navbar_widget.dart';
 import 'package:study_app/search/search.dart';
 
 class Home extends StatefulWidget {
@@ -15,6 +17,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String name = "Usuario";
+  Future<void> getUserName() async {
+    SharedPreferences instance = await SharedPreferences.getInstance();
+    setState(() {
+      name = instance.getString('NAME') ?? "Usuario Teste" ;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUserName();
+  }
+
   bool isSearchEnabled = true;
   int selectedIndex = 0;
   List pages = [
@@ -43,8 +59,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             ListTile(
-              title: const Center(
-                child: Text('Fulano de Tal'),
+              title: Center(
+                child: Text(name),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -126,31 +142,31 @@ class _HomeState extends State<Home> {
     String appTitle = "Study App";
 
     return AppBar(
-        elevation: 1,
-        backgroundColor: const Color(0xFF8CC0DE),
-        title: !isSearchEnabled ? Text(appTitle) : const TextField(
-          style: TextStyle(
-            color: Colors.white,
+      elevation: 1,
+      backgroundColor: const Color(0xFF8CC0DE),
+      title: !isSearchEnabled ? Text(appTitle) : const TextField(
+        style: TextStyle(
+          color: Colors.white,
 
-          ),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              prefixIcon: Icon(Icons.search, color: Colors.white),
-              hintText: "Search...",
-              hintStyle: TextStyle(color: Colors.white)
-          ),
         ),
-        actions: <Widget>[
-          IconButton(
+        decoration: InputDecoration(
+            border: InputBorder.none,
+            prefixIcon: Icon(Icons.search, color: Colors.white),
+            hintText: "Search...",
+            hintStyle: TextStyle(color: Colors.white)
+        ),
+      ),
+      actions: <Widget>[
+        IconButton(
             onPressed: (){
               SharedPrefHelper().logout();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {return const Login();}
               ));
-    },  icon: const Icon(
-    Icons.logout_outlined,
-    color: Colors.white,
-    ))
-        ],
+            },  icon: const Icon(
+          Icons.logout_outlined,
+          color: Colors.white,
+        ))
+      ],
     );
   }
 
